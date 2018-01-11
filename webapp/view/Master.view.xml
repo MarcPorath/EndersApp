@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.Master">
+	<App id="masterView">
+		<pages><Page title="MainMenu">
+
+				<Button text="SelectDeb" width="100%" id="selDeb" icon="sap-icon://search" type="Emphasized" press="selectDebitor"/>
+				<Label text="Bitte wählen Sie einen Kunden aus!" width="100%" id="labSelDeb" textAlign="Center"/>
+				<ObjectListItem id="displayDeb" title="Kundendaten">
+				    <attributes>
+				        <ObjectAttribute id="kdNum"/>
+				        <ObjectAttribute id="kdName"/>
+				        <ObjectAttribute id="kdAdress"/>
+				        <ObjectAttribute id="Ort01"/>
+				        <ObjectAttribute id="kdTel"/>
+				        <ObjectAttribute id="mobTel"/>
+				        
+				    </attributes>
+				    </ObjectListItem>
+				<List id="ActionListMain">
+				    <items>
+				        <ActionListItem type="Navigation" text="Auftrag erfassen" id="navToCreateOrder"  press="toCreateOrder"/>
+				        <ActionListItem type="Navigation" text="Aufträge anzeigen" id="navToDisplOrder" press="toShowOrder"/>
+				        <ActionListItem type="Navigation" text="Kundendaten" press="navToDeb"/>
+				        <ActionListItem type="Navigation" text="Einzelkonditionen" id="navToCond" busy="true" busyIndicatorDelay="1"/>
+				        <ActionListItem type="Navigation" text="PIM Datenbank" id="navToPIM" busy="true" busyIndicatorDelay="1"/>
+				     </items>
+				</List>
+
+					
+				<content/>
+
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

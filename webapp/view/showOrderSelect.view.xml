@@ -1,0 +1,40 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.showOrderSelect">
+	<App id="showOrderSelect">
+		<pages>
+			<Page title="{i18n>selectOrder}">
+				<content>
+				    <Select selectedItem="__item3" selectedKey="month1" selectedItemId="__item3" id="monthSelect" width="40%" icon="sap-icon://date-time" textAlign="Center">
+				        <items>
+				            <core:ListItem text="Dezember 2017" key="month1" id="__item3"/>
+				            <core:ListItem text="November 2017" key="month2" id="__item4"/>
+				            <core:ListItem text="Oktober 2017" key="month3" id="__item5"/></items>
+				    </Select>
+				    <Table noDataText="{i18n>noData}" id="__table0">
+				        <items>
+				            <ColumnListItem id="__item6" type="Detail" selected="true" detailPress="showOrder">
+				                <cells>
+				                    <Text text="17962" id="__text1"/>
+				                    <Text text="22.05.2017" id="__text2"/>
+				                    <Text text="Teilweise beliefert" id="__text3"/></cells>
+				            </ColumnListItem></items>
+				        <columns>
+				            <Column id="orderNum">
+				                <header>
+				                    <Label text="{i18n>orderNum}" id="__label0"/>
+				                </header>
+				            </Column>
+				            <Column id="ddd">
+				                <header>
+				                    <Label text="{i18n>ddd}" id="__label1"/>
+				                </header>
+				            </Column>
+				            <Column id="status">
+				                <header>
+				                    <Label text="{i18n>status}" id="__label2"/>
+				                </header>
+				            </Column></columns></Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

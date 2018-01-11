@@ -1,0 +1,12 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.mainDetail">
+	<App id="mainDetail">
+		<pages>
+			<Page>
+				<HBox width="100%" id="hdBoxBeg" justifyContent="Center" direction="Column" alignItems="Center">
+					<Image src="/webapp/resources/ENDERS_PNG.png" width="900px" height="30%" id="endImage"/>
+				</HBox>
+			<content/>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
