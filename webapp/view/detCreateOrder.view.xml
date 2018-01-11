@@ -1,8 +1,8 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" controllerName="EndersApp.controller.detCreateOrder">
 	<m:App id="detCreateOrder">
 		<m:pages>
-			<m:Page title="Title">
- <m:content>
+			<m:Page title="Main">
+			<m:content>
             <m:Button text="Liefertermin" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange"/>
             <m:ComboBox editable="true" enabled="true" visible="true" width="30%" valueState="None" maxWidth="30%" selectionChange="onComboBoxSelectionChange1" id="baskSel" selectedKey="tBask" placeholder="Warenkorbauswahl">
                 <m:items>
@@ -25,8 +25,8 @@
                         <m:content>
                             <m:Title text="Items (3)" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
                             <m:ToolbarSpacer width=""/>
-                            <m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-                            <m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                            <m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" tooltip="sort" />
+                            <m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" tooltip="filter"/>
                         </m:content>
                         <m:tooltip/>
                     </m:Toolbar>
@@ -131,8 +131,8 @@
                             <m:Text text="1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
                             <m:Text text="ZAKT" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
                             <m:Input type="Number" placeholder="%" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
-                            <core:Icon src="sap-icon://lightbulb" size="30px" color="green" height="48px" width="48px" visible="true" press="avCheck"/>
-                            <core:Icon src="sap-icon://notes" size="30px" height="48px" width="48px" visible="true" press="matDetail"/>
+                            <core:Icon src="sap-icon://lightbulb" size="30px" color="green" height="48px" width="48px" visible="true" press="avCheck" alt="Verfügbarkeit" />
+                            <core:Icon src="sap-icon://notes" size="30px" height="48px" width="48px" visible="true" press="matDetail" alt="Detail" />
                             <unified:Currency value="3200.23" currency="EUR" useSymbol="false" maxPrecision="3"/>
                         </m:cells>
                     </m:ColumnListItem>

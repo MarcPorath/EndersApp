@@ -3,31 +3,41 @@
   xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
   <edmx:DataServices
     xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
-    <Schema Namespace="NerdMeetup.Models"
+    <Schema Namespace="ENDERS"
       xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
       xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
       xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-      <EntityType Name="Meetup">
+      <EntityType Name="BASKET">
         <Key>
-          <PropertyRef Name="MeetupID" />
+        <PropertyRef Name="KUNNR" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="MATNR" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="MVGR1" Type="Edm.Int32" Nullable="false" />
         </Key>
-        <Property Name="MeetupID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Title" Type="Edm.String" Nullable="true" />
-        <Property Name="EventDate" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="Description" Type="Edm.String" Nullable="true" />
-        <Property Name="HostedBy" Type="Edm.String" Nullable="true" />
-        <Property Name="ContactPhone" Type="Edm.String" Nullable="true" />
-        <Property Name="Address" Type="Edm.String" Nullable="true" />
-        <Property Name="Country" Type="Edm.String" Nullable="true" />
-        <Property Name="Latitude" Type="Edm.Double" Nullable="false" />
-        <Property Name="Longitude" Type="Edm.Double" Nullable="false" />
-        <Property Name="HostedById" Type="Edm.String" Nullable="true" />
-        <Property Name="Location" Type="NerdMeetup.Models.LocationDetail" Nullable="false" />
+        <PropertyRef Name="MENGE" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="WERT" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="AVKP" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="APROZ" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ERLOES" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="DDTTMM" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ANZVER" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="LEBENR" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="FREIF1" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="LVK_DAT" Type="Edm.DateTime" Nullable="false" />
+        <PropertyRef Name="ZIDV" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZAKT" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZPRO" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZVKM" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZEKP" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZVEK" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZPRM" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZPR0" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZDAR" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="ZLPM" Type="Edm.Int32" Nullable="false" />
+        <PropertyRef Name="PDIFF" Type="Edm.Int32" Nullable="false" />
       </EntityType>
-      <ComplexType Name="LocationDetail" />
-      <EntityContainer Name="NerdMeetups" m:IsDefaultEntityContainer="true">
-        <EntitySet Name="Meetups" EntityType="NerdMeetup.Models.Meetup" />
-        <FunctionImport Name="FindUpcomingMeetups" EntitySet="Meetups" ReturnType="Collection(NerdMeetup.Models.Meetup)" m:HttpMethod="GET" />
+      <EntityContainer Name="ENDERS_Entities" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="ENDERS_BASKET" EntityType="ENDERS.BASKET" />
+        <FunctionImport Name="getBaskets" EntitySet="BASKET" ReturnType="Collection(ENDERS.BASKET)" m:HttpMethod="GET" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>
