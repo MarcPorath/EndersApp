@@ -43,7 +43,7 @@
 		"sap-no-absolute-component-path": 2,
 		"no-spaced-func": 1,
 		"curly": [1, "all"],
-		"no-debugger": 2,
+		"no-debugger": 0,
 		"comma-style": 0,
 		"no-extend-native": 1,
 		"no-extra-parens": 0,

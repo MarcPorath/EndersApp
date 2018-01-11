@@ -931,7 +931,7 @@
 			"helpUrl": "http://eslint.org/docs/rules/semi-spacing"
 		},
 		"linebreak-style": {
-			"severity": "error",
+			"severity": "warning",
 			"category": "Best Practices",
 			"helpUrl": "http://eslint.org/docs/rules/linebreak-style"
 		},
