@@ -28,6 +28,16 @@
 				}).placeAt("content");
 			});
 		</script>
+		
+		<script>
+		debugger;
+			sap.ui.getCore().attachInit(function() {
+				sap.ui.require(
+					"EndersApp/localService/mockserver", function (mockserver, Shell, ComponentContainer) {
+					mockserver.init();
+				});
+			});
+		</script>
 	</head>
 
 	<body class="sapUiBody" id="content">

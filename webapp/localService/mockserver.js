@@ -15,8 +15,8 @@ sap.ui.define([
 				rootUri: "/"
 			});
 			// simulate against the metadata and mock data
-			oMockServer.simulate("../localService/metadata.xml", {
-				sMockdataBaseUrl: "../localService/mockdata",
+			oMockServer.simulate("metadata.xml", {
+				sMockdataBaseUrl: "mockdata",
 				bGenerateMissingMockData: true
 			});
 			// start
