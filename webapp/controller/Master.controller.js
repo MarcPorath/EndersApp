@@ -1,13 +1,14 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
+sap.ui.define(["sap/ui/core/mvc/Controller"],
+	function(Controller) {
 	"use strict";
 	return Controller.extend("EndersApp.controller.Master", {
 
 		onInit: function() {
 				
-			if (this.byId("kdNum").getText() == ""){
+			if (this.byId("kdNum").getText() === ""){
 				this.byId("ActionListMain").setVisible(false);
 				this.byId("displayDeb").setVisible(false);
-				this.byId("labSelDeb").setVisible(true);}	
+				this.byId("labSelDeb").setVisible(true); }	
 			else{
 				this.byId("ActionListMain").setVisible(true);
 				this.byId("displayDeb").setVisible(true);
@@ -31,11 +32,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
 		this.byId("mobTel").setText("015150610746");
 		////////////////////////////////////////////////////////////
 		//////Select-Check
-			if (this.byId("kdNum").getText() == ""){
-			if (this.byId("kdNum").getText() == ""){
+			if (this.byId("kdNum").getText() === ""){
+			if (this.byId("kdNum").getText() === ""){
 				this.byId("ActionListMain").setVisible(false);
 				this.byId("displayDeb").setVisible(false);
-				this.byId("labSelDeb").setVisible(true);}	
+				this.byId("labSelDeb").setVisible(true);
+				
+			}	
 			else{
 				this.byId("ActionListMain").setVisible(true);
 				this.byId("displayDeb").setVisible(true);
