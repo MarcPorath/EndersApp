@@ -7,7 +7,7 @@
       xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
       xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
       xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-      <EntityType Name="BASKET">
+      <EntityType Name="Basket">
         <Key>
         <PropertyRef Name="KUNNR" Type="Edm.Int32" Nullable="false" />
         <PropertyRef Name="MATNR" Type="Edm.Int32" Nullable="false" />
@@ -36,8 +36,8 @@
         <PropertyRef Name="PDIFF" Type="Edm.Int32" Nullable="false" />
       </EntityType>
       <EntityContainer Name="ENDERS_Entities" m:IsDefaultEntityContainer="true">
-        <EntitySet Name="ENDERS_BASKET" EntityType="ENDERS.BASKET" />
-        <FunctionImport Name="getBaskets" EntitySet="BASKET" ReturnType="Collection(ENDERS.BASKET)" m:HttpMethod="GET" />
+        <EntitySet Name="ENDERS_Basket" EntityType="ENDERS.Basket" />
+        <FunctionImport Name="getBaskets" EntitySet="Basket" ReturnType="Collection(ENDERS.Basket)" m:HttpMethod="GET" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>

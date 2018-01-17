@@ -8,7 +8,13 @@ sap.ui.define([
 	return UIComponent.extend("EndersApp.Component", {
 
 		metadata: {
-			manifest: "json"
+			manifest: "json",
+			config: {
+				serviceConfig: {
+					name: "ENDERS_APP_SRV",
+					serviceUrl: "/sap/odata/ENDERS_APP_SRV"
+				}
+			}
 		},
 
 		/**
@@ -19,9 +25,11 @@ sap.ui.define([
 		init: function() {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
-			this.getRouter().initialize();
+			
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			// Routerinitialize
+			this.getRouter().initialize();
 		}
 	});
 });
