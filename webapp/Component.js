@@ -10,10 +10,10 @@ sap.ui.define([
 		metadata: {
 			manifest: "json",
 			config: {
-				serviceConfig: {
+					serviceConfig: {
 					name: "ENDERS_APP_SRV",
-					serviceUrl: "/sap/odata/ENDERS_APP_SRV"
-				}
+					serviceUrl: "/"
+					}
 			}
 		},
 
@@ -23,6 +23,28 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
+			debugger;
+			var mConfig = this.getMetadata().getConfig();
+
+			// create and set the ODataModel
+			var oAppModel = models.createODataModel({
+				urlParametersForEveryRequest: [
+						"sap-server",
+						"sap-client",
+						"sap-language"
+					],
+				url: mConfig.serviceConfig.serviceUrl,
+				config: {
+					metadataUrlParams: {
+						"sap-documentation": "heading"							
+					},
+					json: true,
+					defaultBindingMode: "TwoWay",
+					defaultCountMode: "Inline",
+					useBatch: true
+				}
+			});
+			this.setModel(oAppModel);			
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 			

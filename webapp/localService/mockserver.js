@@ -15,7 +15,7 @@ sap.ui.define([
 			debugger;
 			var oUriParameters = jQuery.sap.getUriParameters(),
 				oMockServer = new MockServer({
-					rootUri: "/sap/odata/ENDERS_APP_SRV"
+					rootUri: "/"
 			}),
 			sPath = jQuery.sap.getModulePath("EndersApp.localService");
 			

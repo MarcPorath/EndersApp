@@ -43,5 +43,8 @@
     "notifyBeforePushLevel": "Error",
     "blockPush": false,
     "blockPushLevel": "Error"
+  },
+  "mockpreview": {
+    "loadJSONFiles": true
   }
 }
