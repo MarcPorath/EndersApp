@@ -45,6 +45,10 @@
     "blockPushLevel": "Error"
   },
   "mockpreview": {
-    "loadJSONFiles": true
+    "loadJSONFiles": true,
+    "mockUri": "",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
   }
 }

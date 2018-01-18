@@ -12,7 +12,6 @@ sap.ui.define([
 		
 		init: function() {
 			// create
-			debugger;
 			var oUriParameters = jQuery.sap.getUriParameters(),
 				oMockServer = new MockServer({
 					rootUri: "/"
@@ -25,8 +24,8 @@ sap.ui.define([
 			});
 			// simulate against the metadata and mock data
 			oMockServer.simulate(sPath + "/metadata.xml", sPath + "/mockdata");
-			// start
 			oMockServer.start();
+			 
 			jQuery.sap.log.info("Running the app with mock data");
 		}
 	};

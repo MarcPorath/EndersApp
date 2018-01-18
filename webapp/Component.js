@@ -23,8 +23,14 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
-			debugger;
 			var mConfig = this.getMetadata().getConfig();
+			sap.ui.getCore().attachInit(function() {
+				sap.ui.require([
+				"EndersApp/localService/mockserver"
+				], function (mockserver) {
+					mockserver.init();
+				});
+			});			
 
 			// create and set the ODataModel
 			var oAppModel = models.createODataModel({
@@ -36,7 +42,6 @@ sap.ui.define([
 				url: mConfig.serviceConfig.serviceUrl,
 				config: {
 					metadataUrlParams: {
-						"sap-documentation": "heading"							
 					},
 					json: true,
 					defaultBindingMode: "TwoWay",

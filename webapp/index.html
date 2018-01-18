@@ -16,27 +16,26 @@
 		</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		
-		<script type="text/javascript">
+
+		<script>
+		debugger;
 			sap.ui.getCore().attachInit(function() {
 				sap.ui.require([
 				"EndersApp/localService/mockserver"
 				], function (mockserver) {
 					mockserver.init();
-				});
-			});
-		</script>
-
-		<script>
-			sap.ui.getCore().attachInit(function() {
+				},
 				new sap.m.Shell({
 					appWidthLimited: false, 
 					app: new sap.ui.core.ComponentContainer({
 						height : "100%",
 						name : "EndersApp"
 					})
-				}).placeAt("content");
-			});
+				}).placeAt("content"));
+			});		
+/*			sap.ui.getCore().attachInit(function() {
+				;
+			});*/
 		</script>
 	
 	</head>
