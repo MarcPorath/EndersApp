@@ -24,15 +24,9 @@ sap.ui.define([
 		 */
 		init: function() {
 			var mConfig = this.getMetadata().getConfig();
-			sap.ui.getCore().attachInit(function() {
-				sap.ui.require([
-				"EndersApp/localService/mockserver"
-				], function (mockserver) {
-					mockserver.init();
-				});
-			});			
-
 			// create and set the ODataModel
+			// call the base component's init function
+			UIComponent.prototype.init.apply(this, arguments);
 			var oAppModel = models.createODataModel({
 				urlParametersForEveryRequest: [
 						"sap-server",
@@ -49,10 +43,7 @@ sap.ui.define([
 					useBatch: true
 				}
 			});
-			this.setModel(oAppModel);			
-			// call the base component's init function
-			UIComponent.prototype.init.apply(this, arguments);
-			
+			this.setModel(oAppModel);	
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			// Routerinitialize
