@@ -20,8 +20,8 @@
 				        <ActionListItem type="Navigation" text="Auftrag erfassen" id="navToCreateOrder"  press="toCreateOrder"/>
 				        <ActionListItem type="Navigation" text="Aufträge anzeigen" id="navToDisplOrder" press="toShowOrder"/>
 				        <ActionListItem type="Navigation" text="Kundendaten" press="navToDeb"/>
-				        <ActionListItem type="Navigation" text="Einzelkonditionen" id="navToCond" busy="true" busyIndicatorDelay="1"/>
-				        <ActionListItem type="Navigation" text="PIM Datenbank" id="navToPIM" busy="true" busyIndicatorDelay="1"/>
+				        <ActionListItem type="Navigation" text="Einzelkonditionen" id="navToCond" busy="true" busyIndicatorDelay="0" visible="false"/>
+				        <ActionListItem type="Navigation" text="PIM Datenbank" id="navToPIM" busy="true" busyIndicatorDelay="0" visible="false" />
 				     </items>
 				</List>
 

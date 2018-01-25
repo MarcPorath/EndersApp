@@ -1,9 +1,324 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="EndersApp.controller.showDebInf"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" controllerName="EndersApp.controller.showDebInf">
 	<App id="showDebInf">
 		<pages>
 			<Page title="debInfo">
-				<content></content>
+				<content>
+					<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="1" vSpacing="1">
+						<layout:content>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title>
+									<core:Title text="Kundendaten" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements class="debInfForm">
+											<form:FormElement visible="true" class="debInfForm">
+												<form:label>
+													<Label text="{i18n>kunnr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="KUNNR" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="KUNNR" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>NAME1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="NAME1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME1" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>NAME2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="NAME2" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME2" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>NAME3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="NAME3" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME3" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>NAME4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="NAME4" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME4" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>addr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="ADDR" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="ADDR" class="debInfForm"/>
+													<Text text="PLZ" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="PLZ" class="debInfForm"/>
+													<Text text="ORT" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="ORT01" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>phone}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="TELEFON" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="phone" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>fax}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="FAX" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="FAX" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>mail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="MAIL" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="MAIL" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title>
+									<core:Title text="Buchhaltung" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>kungr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>pricegroup}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>OPtotal}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>lastOPdate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="{i18n>lastOPvalue}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:label>
+												<form:fields>
+													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<Button id="opAufruf" text="{i18n>goToOPs}" type="Emphasized" width="30%" press="goToOP"/>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</layout:content>
+					</layout:Grid>
+					<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="1" vSpacing="1">
+						<layout:content>
+							<Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+								<infoToolbar>
+									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<content>
+											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+										</content>
+									</Toolbar>
+								</infoToolbar>
+								<headerToolbar>
+									<Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+										<content>
+											<Title text="Auslieferungsplan" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
+											<ToolbarSpacer width=""/>
+										</content>
+										<tooltip/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>monday}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tuesday}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>wednesday}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>thursday}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>friday}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Input id="bDay1" value="123" editable="false"/>
+											<Input id="bDay2" editable="false"/>
+											<Input id="bDay3" editable="false"/>
+											<Input id="bDay4" editable="false"/>
+											<Input id="bDay5" editable="false"/>
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Input id="dDay1" editable="false"/>
+											<Input id="dDay2" editable="false"/>
+											<Input id="dDay3" editable="false"/>
+											<Input id="dDay4" editable="false"/>
+											<Input id="dDay5" editable="false"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title>
+									<core:Title text="Notizen zum Kunden" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:fields>
+													<TextArea rows="4" cols="20" maxLength="0" wrapping="None" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<Button id="saveNotes" text="{i18n>saveNote}" type="Emphasized" width="30%" press="saveNotes"/>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</layout:content>
+					</layout:Grid>
+					<Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+						<infoToolbar>
+							<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+								<content>
+									<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+								</content>
+							</Toolbar>
+						</infoToolbar>
+						<headerToolbar>
+							<Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+								<content>
+									<Title text="{i18n>ansprechpartner}" titleStyle="Auto" width="auto" textAlign="Center" visible="true"/>
+									<ToolbarSpacer width=""/>
+								</content>
+								<tooltip/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>name}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>phone}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>fax}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>mail}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>function}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+								</header>
+								<footer/>
+							</Column>
+								<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+									<Button width="100%" text="{i18n>addRow}" id="addRow" icon="sap-icon://add-contact"/>
+									
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Button text="Ansprechpartner speichern" type="Accept" iconFirst="true" width="293px" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
 			</Page>
 		</pages>
 	</App>
