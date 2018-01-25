@@ -16,17 +16,24 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				}
 
 			},
-			_getDialog: function() {
-				if (!this._oDialog) {
-					this._oDialog = sap.ui.xmlfragment("EndersApp.view.searchDebDialog");
-					this.getView().addDependent(this._oDialog);
-				}
-				return this._oDialog;
-			},
-			selectDebitor: function(oEvent) {
+			
+			selectDebitor: function() {
 				//////Hier kommt der Aufruf der Debitoren Auswahl, danach wird gecheckt ob einer selektiert wurde
-				debugger;
-				this._getDialog().open();
+		
+						var oView = this.getView();
+			var oDialog = oView.byId("searchDebDialog");
+			
+			if (!oDialog) {
+		
+				oDialog = sap.ui.xmlfragment(oView.getId(), "EndersApp.view.searchDebDialog", this);
+			
+				oView.addDependent(oDialog);
+			}
+
+			oDialog.open();
+				
+
+			
 
 				//////Test Code, mit dem ich erstmal die Auswahl simuliere
 				//////////////////////////////////////////////////////////
@@ -37,7 +44,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				this.byId("kdTel").setText("02607342");
 				this.byId("mobTel").setText("015150610746");
 				////////////////////////////////////////////////////////////
-				//////Select-Check
+
+
+			},
+			closeSearchDialog: function() {
+			this.getView().byId("searchDebDialog").close();
+			
 				if (this.byId("kdNum").getText() === "") {
 					this.byId("ActionListMain").setVisible(false);
 					this.byId("displayDeb").setVisible(false);
@@ -47,7 +59,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.byId("displayDeb").setVisible(true);
 					this.byId("labSelDeb").setVisible(false);
 				}
-
 			},
 
 			toCreateOrder: function(oEvent) {
@@ -66,10 +77,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			navToDeb: function(oEvent) {
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("showDebInf");
-			},
-
-			_getSearchDebDialog: function() {
-
 			}
+			
+			
+			
+			
+			
 		});
 	});

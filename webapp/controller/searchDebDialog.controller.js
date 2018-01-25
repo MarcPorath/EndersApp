@@ -14,7 +14,6 @@ sap.ui.define([
 			this._oDialog.destroy();
 
 		}
-
 	});
 
 });

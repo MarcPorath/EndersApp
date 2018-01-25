@@ -124,7 +124,7 @@
         <beginButton/>
         <buttons>
             <Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-            <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+            <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="closeSearchDialog"/>
         </buttons>
         <customHeader/>
         <endButton/>
