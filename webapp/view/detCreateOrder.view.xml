@@ -3,12 +3,12 @@
 		<m:pages>
 			<m:Page title="Main">
 			<m:content>
-            <m:Button text="Liefertermin" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange"/>
-            <m:ComboBox editable="true" enabled="true" visible="true" width="30%" valueState="None" maxWidth="30%" selectionChange="onComboBoxSelectionChange1" id="baskSel" selectedKey="tBask" placeholder="Warenkorbauswahl">
+            <m:Button text="{i18n>delDate}" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange"/>
+            <m:ComboBox editable="true" enabled="true" visible="true" width="30%" valueState="None" maxWidth="30%" selectionChange="onComboBoxSelectionChange1" id="baskSel" selectedKey="tBask">
                 <m:items>
-                    <core:Item id="tBask" text="{i18n>totBasket}" enabled="true"/>
-                    <core:Item id="fBask" text="{i18n>favBasket}" enabled="true"/>
-                    <core:Item id="sOff" text="{i18n>specOffer}" enabled="true"/>
+                    <core:Item id="tBask" text="{i18n>totBasket}" enabled="true" key="tBask"/>
+                    <core:Item id="fBask" text="{i18n>favBasket}" enabled="true" key="fBask"/>
+                    <core:Item id="sOff" text="{i18n>specOffer}" enabled="true" key="sOff"/>
                 </m:items>
             </m:ComboBox>
             <m:Button text="Standardauftrag" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="selOrderType"/>
