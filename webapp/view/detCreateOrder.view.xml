@@ -23,7 +23,7 @@
                 <m:headerToolbar>
                     <m:Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
                         <m:content>
-                            <m:Title text="Items (3)" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
+                            
                             <m:ToolbarSpacer width=""/>
                             <m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" tooltip="sort" />
                             <m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" tooltip="filter"/>

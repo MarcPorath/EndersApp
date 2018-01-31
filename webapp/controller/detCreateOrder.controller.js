@@ -42,7 +42,6 @@ sap.ui.define([
 					actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
 					onClose: function(oAction) {
 						if (oAction === sap.m.MessageBox.Action.YES) {
-							debugger;
 							sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
 							var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
 							oRouter.navTo("mainDetail");

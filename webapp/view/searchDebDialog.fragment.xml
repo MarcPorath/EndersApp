@@ -21,13 +21,13 @@
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>NAME1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>name2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>NAME2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
@@ -49,7 +49,7 @@
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<SearchField placeholder="{i18n>kunnr}" visible="true" width="50%"/>
-							<SearchField placeholder="{i18n>name1}" visible="true" width="50%"/>
+							<SearchField placeholder="{i18n>NAME1}" visible="true" width="50%"/>
 							<SearchField placeholder="{i18n>plz}" visible="true" width="50%"/>
 							<SearchField placeholder="{i18n>ort01}" visible="true" width="50%"/>
 							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
@@ -71,13 +71,13 @@
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>NAME1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>name2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>NAME2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
