@@ -54,7 +54,6 @@ sap.ui.define([
 					"nw.epm.refapps.ext.shop.model.models.createODataModel");
 				return null;
 			}
-
 			// create a copied instance since we modify the config
 			oConfig = jQuery.extend(true, {}, oOptions.config);
 
@@ -77,7 +76,7 @@ sap.ui.define([
 					single: true
 				}
 			});
-
+			debugger;
 			return oModel;
 		}
 
