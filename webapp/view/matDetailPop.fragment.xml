@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+	xmlns:m="sap.m"
+	xmlns:core="sap.ui.core">
+	    <m:Popover contentHeight="500px" contentWidth="800px" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Left" showHeader="true" title="{i18n>displMat}" verticalScrolling="true" visible="true">
+        <m:content>
+            <m:Input type="Text" description="{i18n>matnr}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>meins}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>maktx}" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>zzgebinde}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>mtpos}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>abgmen}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Date" description="{i18n>lastVk}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>totalVk}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>lastOrder}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>zakt}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>zaktInt}" showValueHelp="false" enabled="false" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>vk}" showValueHelp="false" enabled="false" visible="true" width="33%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>EK}" showValueHelp="false" enabled="false" visible="true" width="33%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>margin}" showValueHelp="false" enabled="false" visible="true" width="33%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>newVk}" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+            <m:Input type="Text" description="{i18n>newVkFrom}" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+        </m:content>
+        <m:beginButton/>
+        <m:customHeader/>
+        <m:endButton/>
+        <m:footer/>
+        <m:subHeader/>
+    </m:Popover>
+</core:FragmentDefinition>

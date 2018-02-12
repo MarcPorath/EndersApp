@@ -26,7 +26,16 @@ sap.ui.define([
 			var mConfig = this.getMetadata().getConfig();
 			// create and set the ODataModel
 			// call the base component's init function
-			UIComponent.prototype.init.apply(this, arguments);
+			var sServiceUrl = mConfig.serviceConfig.serviceUrl;
+			var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
+				json: true,
+				loadMetadataAsync: true
+			});
+			oModel.attachMetadataFailed(function() {
+				this.getEventBus().publish("Component", "MetadataFailed");
+			}, this);
+			this.setModel(oModel);
+/*			UIComponent.prototype.init.apply(this, arguments);
 			var oAppModel = models.createODataModel({
 				urlParametersForEveryRequest: [
 						"sap-server",
@@ -45,7 +54,7 @@ sap.ui.define([
 			});
 			this.setModel(oAppModel);	
 			// set the device model
-			this.setModel(models.createDeviceModel(), "device");
+			this.setModel(models.createDeviceModel(), "device");*/
 			// Routerinitialize
 			this.getRouter().initialize();
 		}

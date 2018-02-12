@@ -7,7 +7,8 @@ sap.ui.define([
 	return Controller.extend("EndersApp.controller.detCreateOrder", {
 
 		onInit: function() {
-
+			var oBSKTable = this.getView().byId("baskTable");
+			
 		},
 
 		avCheck: function() {
@@ -50,6 +51,16 @@ sap.ui.define([
 					}
 				}
 			);
+		},
+		
+		matDetail: function(oEvent) {
+						if (!this._oPopover) {
+				this._oPopover = sap.ui.xmlfragment("EndersApp.view.matDetailPop", this);
+				this.getView().addDependent(this._oPopover);
+				
+			}
+
+			this._oPopover.openBy(oEvent.getSource());
 		}
 
 		//	onExit: function() {
