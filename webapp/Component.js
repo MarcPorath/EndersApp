@@ -27,22 +27,30 @@ sap.ui.define([
 			// create and set the ODataModel
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
-			var oAppModel = models.createODataModel({
-				urlParametersForEveryRequest: [
-						"sap-server",
-						"sap-client",
-						"sap-language"
-					],
-				url: mConfig.serviceConfig.serviceUrl,
-				config: {
-					metadataUrlParams: {
-					},
-					json: true,
-					defaultBindingMode: "TwoWay",
-					defaultCountMode: "Inline",
-					useBatch: true
-				}
+			var sServiceUrl = mConfig.serviceConfig.serviceUrl;	
+			var oAppModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
+				json: true,
+				loadMetadataAsync: true
 			});
+			oAppModel.attachMetadataFailed(function() {
+				this.getEventBus().publish("Component", "MetadataFailed");
+			}, this);
+			// var oAppModel = models.createODataModel({
+			// 	urlParametersForEveryRequest: [
+			// 			"sap-server",
+			// 			"sap-client",
+			// 			"sap-language"
+			// 		],
+			// 	url: mConfig.serviceConfig.serviceUrl,
+			// 	config: {
+			// 		metadataUrlParams: {
+			// 		},
+			// 		json: true,
+			// 		defaultBindingMode: "TwoWay",
+			// 		defaultCountMode: "Inline",
+			// 		useBatch: true
+			// 	}
+			// });
 			this.setModel(oAppModel);	
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");

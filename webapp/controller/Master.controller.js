@@ -1,6 +1,7 @@
 sap.ui.define(["sap/ui/core/mvc/Controller"],
 	function(Controller) {
 		"use strict";
+		 var filters = [];
 		return Controller.extend("EndersApp.controller.Master", {
 
 			onInit: function() {
@@ -16,7 +17,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				}
 
 			},
-
 			selectDebitor: function() {
 				//////Hier kommt der Aufruf der Debitoren Auswahl, danach wird gecheckt ob einer selektiert wurde
 
@@ -48,7 +48,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.byId("labSelDeb").setVisible(false);
 				}
 			},
-			selectDeb: function() {
+			selectDeb: function(string) {
 				//////Test Code, mit dem ich erstmal die Auswahl simuliere
 				//////////////////////////////////////////////////////////
 				this.byId("kdNum").setText("1038901");
@@ -89,6 +89,30 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			navToDeb: function(oEvent) {
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("showDebInf");
+			},
+			onItemPress: function(oEvent) {
+				this.getView().byId("searchDebDialog").close();
+				this.byId("kdNum").setText(oEvent.getParameter("listItem").getBindingContext().getObject().kunnr);
+				this.byId("ActionListMain").setVisible(true);
+				this.byId("displayDeb").setVisible(true);
+				this.byId("labSelDeb").setVisible(false);				
+			},
+			filterData: function(oEvent) {
+				this._filterData(oEvent.getParameter("newValue"), oEvent.getSource().getBindingInfo("placeholder").binding.sPath);
+			},
+			_filterData: function(str,spath){
+				var i = 0;
+				if (filters.length > 0) {
+					for (var s in filters) {
+						if (filters[s] === spath){
+							filters.slice(s, 1, new sap.ui.model.Filter(spath, sap.ui.model.FilterOperator.Contains, str));
+							i = 1;
+						}
+					}					
+				}
+				if ( i < 1 ){
+					filters.push(new sap.ui.model.Filter(spath, sap.ui.model.FilterOperator.Contains, str));
+				}
 			}
 
 		});
