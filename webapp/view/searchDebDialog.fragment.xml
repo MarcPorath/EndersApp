@@ -9,7 +9,7 @@
 					<IconTabFilter icon="sap-icon://collaborate" iconColor="Neutral" text="{i18n>bplan}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<Table width="100%" noDataText="No Data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+							<Table width="100%" noDataText="No Data" mode="None" items="{path: '/Customer'}" itemPress="onItemPress" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
 								<infoToolbar/>
 								<headerToolbar/>
 								<columns>
@@ -21,7 +21,7 @@
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>NAME1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
@@ -39,7 +39,14 @@
 									</Column>
 								</columns>
 								<items>
-
+									<ColumnListItem id="columnListItem" vAlign="Middle" type="Navigation">
+										<cells>
+											<Text id="kunnr1" text="{kunnr}" maxLines="2" />
+											<Text id="name11" text="{name1}" maxLines="2" />
+											<Text id="ort011" text="{ort01}" maxLines="2" />
+											<Text id="tel011" text="{tel01}" maxLines="2" />
+										</cells>
+									</ColumnListItem>
 								</items>
 							</Table>
 						</content>
@@ -48,12 +55,12 @@
 					<IconTabFilter icon="sap-icon://search" iconColor="Neutral" text="{i18n>dbsearch}" count="3" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<SearchField placeholder="{i18n>kunnr}" visible="true" width="50%"/>
-							<SearchField placeholder="{i18n>NAME1}" visible="true" width="50%"/>
-							<SearchField placeholder="{i18n>plz}" visible="true" width="50%"/>
-							<SearchField placeholder="{i18n>ort01}" visible="true" width="50%"/>
+							<SearchField id="kunnr" placeholder="{i18n>kunnr}" visible="true" width="50%" liveChange="filterData"/>
+							<SearchField id="name1" placeholder="{i18n>name1}" visible="true" width="50%" liveChange="filterData"/>
+							<SearchField id="plz01" placeholder="{i18n>plz}" visible="true" width="50%" liveChange="filterData"/>
+							<SearchField id="ort01" placeholder="{i18n>ort01}" visible="true" width="50%" liveChange="filterData"/>
 							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-							<Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+							<Table width="100%" id="table_deb" noDataText="No data" mode="None" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -88,9 +95,14 @@
 										<footer/>
 									</Column>
 								</columns>
-								<items>
-								
-								</items>
+								<ColumnListItem>
+									<cells>
+										<Text id="kunnr2" text="{kunnr}" maxLines="2" />
+										<Text id="name12" text="{name1}" maxLines="2" />
+										<Text id="ort012" text="{ort01}" maxLines="2" />
+										<Text id="tel012" text="{tel01}" maxLines="2" />
+									</cells>
+								</ColumnListItem>
 							</Table>
 						</content>
 					</IconTabFilter>

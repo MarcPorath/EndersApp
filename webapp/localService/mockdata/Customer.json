@@ -1,0 +1,25 @@
+[{
+	"kunnr": 1000418,
+	"name1": "Metzgerei Bendel Josef",
+	"name2": "Bendel Josef",
+	"ort01": "Bergatreute-Witschwende",
+	"plz01": 88368,
+	"tel01": "07527-1648",
+	"__metadata": {
+		"uri": "Customer(kunnr=1000418)",
+		"type": "Enders.Customer"
+	}
+},
+{
+	"kunnr": 1022581,
+	"name1": "Asia-Imbiss Kim Long",
+	"name2": "Ho Thi Kim Nga",
+	"ort01": "Reiskirchen",
+	"plz01": 35447,
+	"tel01": "06408-504536",
+	"__metadata": {
+		"uri": "Customer(kunnr=1022581)",
+		"type": "Enders.Customer"
+	}
+}
+]

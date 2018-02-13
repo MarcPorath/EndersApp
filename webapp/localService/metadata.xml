@@ -58,11 +58,29 @@
 				<Property MaxLength="10" Name="pdiff" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
 					sap:label="pdiff" sap:sortable="false" sap:updatable="false"/>					
 			</EntityType>
+			<EntityType Name="Customer" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="kunnr"/>
+				</Key>
+				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="name1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Name 1" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="name2" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Name 2" sap:sortable="false" sap:updatable="false"/>	
+				<Property MaxLength="18" Name="ort01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Ort 1" sap:sortable="false" sap:updatable="false"/>	
+				<Property MaxLength="18" Name="plz01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Plz 1" sap:sortable="false" sap:updatable="false"/>	
+				<Property MaxLength="18" Name="tel01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Tel 1" sap:sortable="false" sap:updatable="false"/>					
+			</EntityType>			
 		</Schema>
 		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ODataWebV3.Enders.Model">
 			<EntityContainer xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" Name="EndersEntities"
 				m:IsDefaultEntityContainer="true" p6:LazyLoadingEnabled="true">
 				<EntitySet Name="Basket" EntityType="Enders.Basket"/>
+				<EntitySet Name="Customer" EntityType="Enders.Customer"/>
 			</EntityContainer>
 		</Schema>
 	</edmx:DataServices>

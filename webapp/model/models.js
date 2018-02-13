@@ -76,7 +76,6 @@ sap.ui.define([
 					single: true
 				}
 			});
-			debugger;
 			return oModel;
 		}
 
