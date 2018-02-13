@@ -21,7 +21,7 @@
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>NAME1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
@@ -56,11 +56,11 @@
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<SearchField id="kunnr" placeholder="{i18n>kunnr}" visible="true" width="50%" liveChange="filterData"/>
-							<SearchField id="name1" placeholder="{i18n>NAME1}" visible="true" width="50%" liveChange="filterData"/>
+							<SearchField id="name1" placeholder="{i18n>name1}" visible="true" width="50%" liveChange="filterData"/>
 							<SearchField id="plz01" placeholder="{i18n>plz}" visible="true" width="50%" liveChange="filterData"/>
 							<SearchField id="ort01" placeholder="{i18n>ort01}" visible="true" width="50%" liveChange="filterData"/>
 							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-							<Table width="100%" noDataText="No data" mode="None" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+							<Table width="100%" id="table_deb" noDataText="No data" mode="None" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>

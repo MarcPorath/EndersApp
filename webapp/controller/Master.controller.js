@@ -104,14 +104,26 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				var i = 0;
 				if (filters.length > 0) {
 					for (var s in filters) {
-						if (filters[s] === spath){
-							filters.slice(s, 1, new sap.ui.model.Filter(spath, sap.ui.model.FilterOperator.Contains, str));
+						if (filters[s].sPath === spath ){
+							if ( str === "" ) {
+								filters.splice(s, 1);	
+							} else {
+								filters.splice(s, 1, new sap.ui.model.Filter(spath, sap.ui.model.FilterOperator.Contains, str));
+							}
 							i = 1;
 						}
 					}					
 				}
 				if ( i < 1 ){
 					filters.push(new sap.ui.model.Filter(spath, sap.ui.model.FilterOperator.Contains, str));
+				}
+				this._applyOnModel();
+			},
+			// filter OData with Filter Array
+			_applyOnModel: function() {
+				this.getView().byId("table_deb").getBinding("items").filter([]);
+				if (filters.length > 0) {
+					this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
 				}
 			}
 
