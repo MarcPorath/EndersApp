@@ -4,7 +4,15 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("EndersApp.controller.showOrderDetail", {
+		matDetail: function(oEvent) {
+						if (!this._oPopover) {
+				this._oPopover = sap.ui.xmlfragment("EndersApp.view.matDetailPop", this);
+				this.getView().addDependent(this._oPopover);
+				
+			}
 
+			this._oPopover.openBy(oEvent.getSource());
+		}
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
