@@ -6,15 +6,14 @@
 				<Label text="Bitte wählen Sie einen Kunden aus!" width="100%" id="labSelDeb" textAlign="Center"/>
 				<ObjectListItem id="displayDeb" title="Kundendaten">
 				    <attributes>
-				        <ObjectAttribute id="kdNum"/>
-				        <ObjectAttribute id="kdName"/>
-				        <ObjectAttribute id="kdAdress"/>
-				        <ObjectAttribute id="Ort01"/>
-				        <ObjectAttribute id="kdTel"/>
-				        <ObjectAttribute id="mobTel"/>
-				        
+				        <ObjectAttribute id="kunnr_m" />
+				        <ObjectAttribute id="name1_m" />
+				        <ObjectAttribute id="name2_m" />
+				        <ObjectAttribute id="tel01_m" />
+				        <ObjectAttribute id="plz01_m" />
+				        <ObjectAttribute id="ort01_m" />
 				    </attributes>
-				    </ObjectListItem>
+			    </ObjectListItem>
 				<List id="ActionListMain">
 				    <items>
 				        <ActionListItem type="Navigation" text="Auftrag erfassen" id="navToCreateOrder"  press="toCreateOrder"/>

@@ -62,7 +62,7 @@
 				<Key>
 					<PropertyRef Name="kunnr"/>
 				</Key>
-				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="18" Name="name1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Name 1" sap:sortable="false" sap:updatable="false"/>

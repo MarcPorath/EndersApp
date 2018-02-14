@@ -2,11 +2,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 	function(Controller) {
 		"use strict";
 		 var filters = [];
+		 var selectedCust = "";
 		return Controller.extend("EndersApp.controller.Master", {
 
 			onInit: function() {
 
-				if (this.byId("kdNum").getText() === "") {
+				if (this.byId("kunnr_m").getText() === "") {
 					this.byId("ActionListMain").setVisible(false);
 					this.byId("displayDeb").setVisible(false);
 					this.byId("labSelDeb").setVisible(true);
@@ -35,43 +36,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 
 
 			},
-			closeSearchDialog: function() {
-				this.getView().byId("searchDebDialog").close();
-
-				if (this.byId("kdNum").getText() === "") {
-					this.byId("ActionListMain").setVisible(false);
-					this.byId("displayDeb").setVisible(false);
-					this.byId("labSelDeb").setVisible(true);
-				} else {
-					this.byId("ActionListMain").setVisible(true);
-					this.byId("displayDeb").setVisible(true);
-					this.byId("labSelDeb").setVisible(false);
-				}
-			},
-			selectDeb: function(string) {
-				//////Test Code, mit dem ich erstmal die Auswahl simuliere
-				//////////////////////////////////////////////////////////
-				this.byId("kdNum").setText("1038901");
-				this.byId("kdName").setText("Hotel Zur Kupferkanne GmbH");
-				this.byId("kdAdress").setText("Lutzstr. 20");
-				this.byId("Ort01").setText("56330 Kobern-Gondorf");
-				this.byId("kdTel").setText("02607342");
-				this.byId("mobTel").setText("015150610746");
-				////////////////////////////////////////////////////////////
-				
-				this.getView().byId("searchDebDialog").close();
-
-				if (this.byId("kdNum").getText() === "") {
-					this.byId("ActionListMain").setVisible(false);
-					this.byId("displayDeb").setVisible(false);
-					this.byId("labSelDeb").setVisible(true);
-				} else {
-					this.byId("ActionListMain").setVisible(true);
-					this.byId("displayDeb").setVisible(true);
-					this.byId("labSelDeb").setVisible(false);
-				}
-				
-			},
 			toCreateOrder: function(oEvent) {
 				this.byId("masterView").setBusy(true);
 			
@@ -90,12 +54,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("showDebInf");
 			},
-			onItemPress: function(oEvent) {
+			
+			entryDeb: function(oEvent){
 				this.getView().byId("searchDebDialog").close();
-				this.byId("kdNum").setText(oEvent.getParameter("listItem").getBindingContext().getObject().kunnr);
+				this.byId("kunnr_m").setText(selectedCust.kunnr);
+				this.byId("name1_m").setText(selectedCust.name1);
+				this.byId("name2_m").setText(selectedCust.name2);
+				this.byId("tel01_m").setText(selectedCust.tel01);
+				this.byId("ort01_m").setText(selectedCust.ort01);
+				this.byId("plz01_m").setText(selectedCust.plz01);
 				this.byId("ActionListMain").setVisible(true);
 				this.byId("displayDeb").setVisible(true);
 				this.byId("labSelDeb").setVisible(false);				
+			},
+			onItemPress: function(oEvent) {
+				
+				selectedCust = oEvent.getParameter("listItem").getBindingContext().getObject();
+				this.entryDeb(oEvent);
+				
+			},
+			selectItem: function(oControlEvent) {
+				selectedCust = oControlEvent.getParameter("listItem").getBindingContext().getObject();
 			},
 			filterData: function(oEvent) {
 				this._filterData(oEvent.getParameter("newValue"), oEvent.getSource().getBindingInfo("placeholder").binding.sPath);
@@ -126,6 +105,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
 				}
 			}
-
+			// _readSpecificCustomer: function(){
+			// 	var aFilter = [];
+			// 	var oBinding;
+			// 	aFilter.push(new sap.ui.model.Filter("kunnr", sap.ui.model.FilterOperator.EQ, selectedCust));
+			// 	oBinding = this.getView().getModel().bindList("/Customer");
+			// 	oBinding.filter(aFilter);
+			// }					
 		});
 	});

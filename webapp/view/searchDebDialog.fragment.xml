@@ -27,13 +27,13 @@
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>NAME2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>ort01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>ort01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>tel01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
@@ -57,10 +57,10 @@
 						<content>
 							<SearchField id="kunnr" placeholder="{i18n>kunnr}" visible="true" width="50%" liveChange="filterData"/>
 							<SearchField id="name1" placeholder="{i18n>name1}" visible="true" width="50%" liveChange="filterData"/>
-							<SearchField id="plz01" placeholder="{i18n>plz}" visible="true" width="50%" liveChange="filterData"/>
 							<SearchField id="ort01" placeholder="{i18n>ort01}" visible="true" width="50%" liveChange="filterData"/>
+							<SearchField id="tel01" placeholder="{i18n>tel01}" visible="true" width="50%" liveChange="filterData"/>
 							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-							<Table width="100%" id="table_deb" noDataText="No data" mode="None" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+							<Table width="100%" id="table_deb" noDataText="No data" mode="SingleSelect" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" selectionChange="selectItem" growingScrollToLoad="true">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -78,19 +78,19 @@
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="{i18n>NAME1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>NAME2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
 											<Text text="{i18n>ort01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tel01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
@@ -114,7 +114,7 @@
 		</content>
 		<beginButton/>
 		<buttons>
-			<Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="selectDeb"/>
+			<Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="entryDeb"/>
 			<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
 				press="closeSearchDialog"/>
 		</buttons>
