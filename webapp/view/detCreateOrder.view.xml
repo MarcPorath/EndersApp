@@ -3,7 +3,7 @@
 		<m:pages>
 			<m:Page title="Main">
 			<m:content>
-            <m:Button  type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange" text="date1"/>
+            <m:Button text="{i18n>delDate}" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange"/>
             <m:ComboBox editable="true" enabled="true" visible="true" width="30%" valueState="None" maxWidth="30%" selectionChange="onComboBoxSelectionChange1" id="baskSel" selectedKey="tBask">
                 <m:items>
                     <core:Item id="tBask" text="{i18n>totBasket}" enabled="true" key="tBask"/>
@@ -12,7 +12,7 @@
                 </m:items>
             </m:ComboBox>
             <m:Button text="Standardauftrag" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="selOrderType"/>
-            <m:Table id="baskTable" width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+            <m:Table id="baskTable" width="100%" items="{path: '/Basket'}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
                 <m:infoToolbar>
                     <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
                         <m:content>
@@ -31,7 +31,91 @@
                         <m:tooltip/>
                     </m:Toolbar>
                 </m:headerToolbar>
- 
+                <m:columns>
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>mvgr1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>      
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>matnr}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>   
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>maktx}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>  
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>lizkz}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>mtpos}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>			
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>meins}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+	                <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>zpr0}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+                	<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>peinh}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>verfuegbar}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>matinf}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>	
+					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<m:header>
+							<m:Text text="{i18n>zvek}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</m:header>
+						<m:footer/>
+					</m:Column>					
+				</m:columns>					
+				<m:items>	
+                	<m:ColumnListItem id="columnListItem" vAlign="Middle" type="Navigation">
+						<m:cells>
+							<m:Text id="mvgr1" text="{mvgr1}" maxLines="2" />
+							<m:Text id="matnr" text="{matnr}" maxLines="2" />
+							<m:Text id="maktx" text="{maktx}" maxLines="2" />
+							<m:Text id="lizkz" text="{lizkz}" maxLines="2" />
+							<m:Text id="mtpos" text="{mtpos}" maxLines="2" />
+							<m:Text id="meins" text="{meins}" maxLines="2" />
+							<m:Text id="zpr0" text="{zpr0}" maxLines="2" />
+							<m:Text id="peinh" text="{peinh}" maxLines="2" />
+							<m:Text id="verfuegbar" maxLines="2" />
+							<m:Text id="matinf" maxLines="2" />
+							<m:Text id="zvek" text="{zvek}" />
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>            	
             </m:Table>
             <m:HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div" visible="true" displayInline="false">
                 <m:items>
