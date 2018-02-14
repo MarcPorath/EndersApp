@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified">
+    <m:Popover id="changeAuart" contentHeight="auto" contentWidth="auto" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Auto" showHeader="true" title="{i18n>auart}" verticalScrolling="true" visible="true">
+        <m:content>
+            <m:ComboBox editable="true" enabled="true" visible="true" width="318px" valueState="None" maxWidth="100%" selectionChange="onComboBoxSelectionChangeAuart" id="selDelBox" selectedKey="auart1">
+                <m:items>
+                    <core:Item text="1" enabled="true" key="auart1" />
+                    <core:Item text="2" enabled="true" key="auart2"/>
+                    <core:Item text="3" enabled="true" key="auart3"/>
+                    <core:Item text="4" enabled="true" key="auart4"/>
+                </m:items>
+            </m:ComboBox>
+           </m:content>
+    </m:Popover>
+</core:FragmentDefinition>

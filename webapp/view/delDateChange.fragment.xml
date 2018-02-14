@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified">
+    <m:Popover id="delDateChange" contentHeight="450px" contentWidth="350px" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Right" showHeader="true" title="{i18n>devDate}" verticalScrolling="true" visible="true">
+        <m:content>
+            <m:ComboBox editable="true" enabled="true" visible="true" width="318px" valueState="None" maxWidth="100%" selectionChange="onComboBoxSelectionChange" id="selDelBox" selectedKey="date1">
+                <m:items>
+                    <core:Item text="1" enabled="true" key="date1" />
+                    <core:Item text="2" enabled="true" key="date2"/>
+                    <core:Item text="3" enabled="true" key="date3"/>
+                    <core:Item text="4" enabled="true" key="date4"/>
+                    <core:Item text="{i18n>anoDelDate}" enabled="true" key="anDate"/>
+                </m:items>
+            </m:ComboBox>
+            <unified:Calendar months="1" singleSelection="true" intervalSelection="false" firstDayOfWeek="0" busy="true" id="calDelDate">
+                <unified:specialDates/>
+                <unified:selectedDates/>
+            </unified:Calendar>
+        </m:content>
+        <m:beginButton/>
+        <m:customHeader/>
+        <m:endButton/>
+        <m:footer/>
+        <m:subHeader/>
+    </m:Popover>
+</core:FragmentDefinition>

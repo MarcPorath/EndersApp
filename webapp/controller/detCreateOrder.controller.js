@@ -61,8 +61,51 @@ sap.ui.define([
 			}
 
 			this._oPopover.openBy(oEvent.getSource());
-		}
+		},
+		
+		delDateChange: function(oEvent) {
+			
+									if (!this._oPopover) {
+										debugger;
+				this._oPopover = sap.ui.xmlfragment("EndersApp.view.delDateChange", this);
+				this.getView().addDependent(this._oPopover);
+				
+			}
 
+			this._oPopover.openBy(oEvent.getSource());
+		},
+		
+		onComboBoxSelectionChange: function(oEvent){
+			
+	//		var key =	oEvent.getSource().getSelectedKey();
+	//		var check = "anDate";
+	//			if(key == check){
+	//			var cal = sap.ui.getCore("EndersApp.view.delDateChange");
+	//		
+	//			console.log(cal);
+	//				//sap.m.MessageToast.show("passt");
+	//				
+	//			}
+			
+			
+		sap.m.MessageToast.show("Funktion muss noch implementiert werden!");
+		},
+		
+		selOrderType: function(oEvent){
+								
+										if (!this._oPopover) {
+			
+			
+				this._oPopover = sap.ui.xmlfragment("EndersApp.view.changeAuart", this);
+			
+				this.getView().addDependent(this._oPopover);
+				
+			}
+
+			this._oPopover.openBy(oEvent.getSource());
+			
+		}
+		
 		//	onExit: function() {
 		//
 		//	}
