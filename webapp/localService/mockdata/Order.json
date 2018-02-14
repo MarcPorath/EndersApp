@@ -1,0 +1,17 @@
+[{
+	"vbeln": "1205478",
+	"angel": "12.01.2018",
+	"__metadata": {
+		"uri": "Order(vbeln=1205478)",
+		"type": "Enders.Order"
+	}
+},
+{
+	"vbeln": "1205479",
+	"angel": "13.01.2018",
+	"__metadata": {
+		"uri": "Order(vbeln=1205479)",
+		"type": "Enders.Order"
+	}
+}
+]
