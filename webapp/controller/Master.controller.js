@@ -36,11 +36,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 
 
 			},
+			closeSearchDialog: function(){
+				this.getView().byId("searchDebDialog").close();
+				sap.m.MessageToast.show("Es wurde kein Kunde ausgewählt");
+			},
 			toCreateOrder: function(oEvent) {
-				this.byId("masterView").setBusy(true);
-			
-				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-				oRouter.navTo("detCreateOrder");
+				if (selectedCust === "" ) {
+					sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
+				} else {
+					this.byId("masterView").setBusy(true);
+					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+					oRouter.navTo("detCreateOrder");
+				}
 				
 			},
 
@@ -49,7 +56,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("showOrderSelect");
 			},
-
+			getCustomer: function() {
+				return this.selectedCust;	
+			},
 			navToDeb: function(oEvent) {
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("showDebInf");

@@ -1,145 +1,35 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" controllerName="EndersApp.controller.detCreateOrder">
-	<m:App id="detCreateOrder">
-		<m:pages>
-			<m:Page title="Main">
-			<m:content>
-            <m:Button text="{i18n>delDate}" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange"/>
-            <m:ComboBox editable="true" enabled="true" visible="true" width="30%" valueState="None" maxWidth="30%" selectionChange="onComboBoxSelectionChange1" id="baskSel" selectedKey="tBask">
-                <m:items>
-                    <core:Item id="tBask" text="{i18n>totBasket}" enabled="true" key="tBask"/>
-                    <core:Item id="fBask" text="{i18n>favBasket}" enabled="true" key="fBask"/>
-                    <core:Item id="sOff" text="{i18n>specOffer}" enabled="true" key="sOff"/>
-                </m:items>
-            </m:ComboBox>
-            <m:Button text="Standardauftrag" type="Emphasized" iconFirst="true" width="35%" enabled="true" visible="true" iconDensityAware="false" press="selOrderType"/>
-            <m:Table id="baskTable" width="100%" items="{path: '/Basket'}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
-                <m:infoToolbar>
-                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
-                        <m:content>
-                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:content>
-                    </m:Toolbar>
-                </m:infoToolbar>
-                <m:headerToolbar>
-                    <m:Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
-                        <m:content>
-                            
-                            <m:ToolbarSpacer width=""/>
-                            <m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" tooltip="sort" />
-                            <m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" tooltip="filter"/>
-                        </m:content>
-                        <m:tooltip/>
-                    </m:Toolbar>
-                </m:headerToolbar>
-                <m:columns>
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>mvgr1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>      
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>matnr}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>   
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>maktx}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>  
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>lizkz}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>mtpos}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>			
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>meins}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>
-	                <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>zpr0}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>
-                	<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>peinh}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>verfuegbar}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>matinf}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>	
-					<m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-						<m:header>
-							<m:Text text="{i18n>zvek}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-						</m:header>
-						<m:footer/>
-					</m:Column>					
-				</m:columns>					
-				<m:items>	
-                	<m:ColumnListItem id="columnListItem" vAlign="Middle" type="Navigation">
-						<m:cells>
-							<m:Text id="mvgr1" text="{mvgr1}" maxLines="2" />
-							<m:Text id="matnr" text="{matnr}" maxLines="2" />
-							<m:Text id="maktx" text="{maktx}" maxLines="2" />
-							<m:Text id="lizkz" text="{lizkz}" maxLines="2" />
-							<m:Text id="mtpos" text="{mtpos}" maxLines="2" />
-							<m:Text id="meins" text="{meins}" maxLines="2" />
-							<m:Text id="zpr0" text="{zpr0}" maxLines="2" />
-							<m:Text id="peinh" text="{peinh}" maxLines="2" />
-							<m:Text id="verfuegbar" maxLines="2" />
-							<m:Text id="matinf" maxLines="2" />
-							<m:Text id="zvek" text="{zvek}" />
-						</m:cells>
-					</m:ColumnListItem>
-				</m:items>            	
-            </m:Table>
-            <m:HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div" visible="true" displayInline="false">
-                <m:items>
-                    <m:Text text="{i18n>totValue}" width="150px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                    <m:Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                    <unified:Currency value="3200.23" currency="EUR" useSymbol="false" maxPrecision="3"/>
-                </m:items>
-                <m:layoutData/>
-            </m:HBox>
-        </m:content>
-        <m:footer>
-            <m:Bar design="Auto">
-                <m:contentLeft/>
-                <m:contentMiddle/>
-                <m:contentRight>
-                    <m:Button text="{i18n>reject}" type="Reject" iconFirst="true" width="20%" enabled="true" visible="true" iconDensityAware="false" press="goBackAndReject"/>
-                    <m:Button text="{i18n>saveOrder}" type="Accept" iconFirst="true" width="20%" enabled="true" visible="true" iconDensityAware="false" press="confirmSave"/>
-                </m:contentRight>
-            </m:Bar>
-        </m:footer>
-        <m:headerContent/>
-        <m:subHeader/>
-        <m:customHeader/>
-			</m:Page>
-		</m:pages>
-	</m:App>
+<mvc:View xmlns:core="sap.ui.core" 
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" 
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:unified="sap.ui.unified" 
+	xmlns:m="sap.m"
+	controllerName="EndersApp.controller.detCreateOrder"
+	height="100%">
+	<m:VBox fitContainer="true">
+		<smartFilterBar:SmartFilterBar 
+			id="smartFilterBar"
+			entitySet="Basket"
+			basicSearchFieldName="KUNNR"
+			enableBasicSearch="true">
+			<smartFilterBar:controlConfiguration>
+				<smartFilterBar:ControlConfiguration key="KUNNR">
+				</smartFilterBar:ControlConfiguration>
+			</smartFilterBar:controlConfiguration>
+		</smartFilterBar:SmartFilterBar>
+		<smartTable:SmartTable 
+			id="smartTable_ResponsiveTable"
+			smartFilterId="smartFilterBar" 
+			tableType="ResponsiveTable" 
+			editable="false"
+			entitySet="Basket" 
+			useVariantManagement="false"
+			useTablePersonalisation="true" 
+			header="Basket" 
+			showRowCount="true"
+			useExportToExcel="false" 
+			enableAutoBinding="true">
+		</smartTable:SmartTable>	
+	</m:VBox>		
 </mvc:View>
