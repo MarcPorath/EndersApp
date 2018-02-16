@@ -1,10 +1,13 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"./BaseController",
 	"sap/m/MessageBox"
-], function(Controller) {
+], function(BaseController) {
 	"use strict";
 
-	return Controller.extend("EndersApp.controller.detCreateOrder", {
+	return BaseController.extend("EndersApp.controller.detCreateOrder", {
+		onInit: function() {
+			this.getView().setModel(this.getOwnerComponent().getModel("basket"));
+		}
 	});
 	// 	onInit: function() {
 	// 		var oBSKTable = this.getView().byId("baskTable");

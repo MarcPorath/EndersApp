@@ -25,12 +25,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				var oDialog = oView.byId("searchDebDialog");
 
 				if (!oDialog) {
-
 					oDialog = sap.ui.xmlfragment(oView.getId(), "EndersApp.view.searchDebDialog", this);
 
 					oView.addDependent(oDialog);
 				}
-
+				debugger;
 				oDialog.open();
 
 

@@ -12,7 +12,7 @@
                     <PropertyRef Name="matnr"/>
                     <PropertyRef Name="mvgr1"/>
                 </Key>
-                <Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
+                <Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
                 <Property MaxLength="18" Name="matnr" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
 					sap:label="Materialnummer" sap:sortable="false" sap:updatable="false"/>

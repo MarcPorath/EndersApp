@@ -51,7 +51,7 @@ sap.ui.define([
 			// 		useBatch: true
 			// 	}
 			// });
-			this.setModel(oAppModel);	
+			this.setModel(oAppModel);
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			// Routerinitialize
