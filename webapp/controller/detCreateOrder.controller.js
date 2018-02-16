@@ -8,7 +8,7 @@ sap.ui.define([
 		onInit: function() {
 			this.getView().setModel(this.getOwnerComponent().getModel("basket"));
 		}
-	});
+
 	// 	onInit: function() {
 	// 		var oBSKTable = this.getView().byId("baskTable");
 			
@@ -18,25 +18,31 @@ sap.ui.define([
 	// 		sap.m.MessageToast.show("XX St verfügbar zum Wunschlieferdatum!");
 	// 	},
 
-	// 	confirmSave: function() {
-	// 		var that = this;
-	// 		sap.m.MessageBox.confirm(
-	// 			'{i18n>confirmCO}', {
-	// 				icon: sap.m.MessageBox.Icon.SUCCESS,
-	// 				title: '{i18n>confirm}',
-	// 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
-	// 				onClose: function(oAction) {
-	// 					if (oAction === sap.m.MessageBox.Action.YES) {
-	// 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
-	// 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-	// 						oRouter.navTo("mainDetail");
-	// 						sap.m.MessageToast.show("{i18n>crOrderDone}");
-	// 					}
+// 	confirmSave: function() {
+// 		var that = this;
+// 		sap.m.MessageBox.confirm(
+// 			'{i18n>confirmCO}', {
+// 				icon: sap.m.MessageBox.Icon.SUCCESS,
+// 				title: '{i18n>confirm}',
+// 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
+// 				onClose: function(oAction) {
+// 				
+// 					if (oAction === sap.m.MessageBox.Action.YES) {
+// 						
+//						var oMainView = sap.ui.getCore().byId("__xmlview0");
+//						var oSplitContainer = oMainView.byId("mainView");
+//						oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
 
-	// 				}
-	// 			}
-	// 		);
-	// 	},
+// 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
+// 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
+// 						oRouter.navTo("mainDetail");
+// 						sap.m.MessageToast.show("{i18n>crOrderDone}");
+// 					}
+
+// 				}
+// 			}
+// 		);
+// 	}
 	// 	goBackAndReject: function(oEvent) {
 	// 		var that = this;
 	// 		sap.m.MessageBox.confirm(
@@ -46,6 +52,9 @@ sap.ui.define([
 	// 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
 	// 				onClose: function(oAction) {
 	// 					if (oAction === sap.m.MessageBox.Action.YES) {
+	//						var oMainView = sap.ui.getCore().byId("__xmlview0");
+	//						var oSplitContainer = oMainView.byId("mainView");
+	//						oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
 	// 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
 	// 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
 	// 						oRouter.navTo("mainDetail");
@@ -113,6 +122,6 @@ sap.ui.define([
 	// 	//
 	// 	//	}
 
-	// });
+ });
 
 });
