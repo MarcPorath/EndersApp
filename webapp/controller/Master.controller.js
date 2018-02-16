@@ -43,6 +43,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				if (selectedCust === "" ) {
 					sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
 				} else {
+				//	var oMainView = sap.ui.getCore().byId("__xmlview0");
+				//	var oSplitContainer = oMainView.byId("mainView");
+				//	oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
+				//	if (oSplitContainer.isMasterShown()) {
+				//		oSplitContainer.setMode(sap.m.SplitAppMode.HideMode);
+				//	}
 					this.byId("masterView").setBusy(true);
 					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 					oRouter.navTo("detCreateOrder");
