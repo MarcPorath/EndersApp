@@ -7,6 +7,7 @@ sap.ui.define([
 	return BaseController.extend("EndersApp.controller.detCreateOrder", {
 		onInit: function() {
 			this.getView().setModel(this.getOwnerComponent().getModel("basket"));
+			debugger;
 		}
 
 	// 	onInit: function() {

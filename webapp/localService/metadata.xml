@@ -9,9 +9,9 @@
 					<PropertyRef Name="matnr"/>
 					<PropertyRef Name="maktx"/>
 				</Key>
-				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
+				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="MATNR" Type="Edm.Int32" sap:filterable="false"
+				<Property MaxLength="18" Name="MATNR" Type="Edm.Guid" sap:filterable="true"
 					sap:label="Materialnummer"/>
 				<Property MaxLength="40" Name="MAKTX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Artikeltext" sap:sortable="false" sap:updatable="false"/>
@@ -62,7 +62,7 @@
 				<Property MaxLength="10" Name="KONDM" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
 					sap:label="kondm" sap:sortable="false" sap:updatable="false"/>	
 				<Property MaxLength="10" Name="MTPOS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="MTPOS" sap:sortable="false" sap:updatable="false"/>	
+					sap:label="MTPOS" sap:sortable="false" sap:updatable="false"/>
 			</EntityType>
 			<EntityType Name="Customer">
 				<Key>
@@ -96,9 +96,25 @@
 				<EntitySet Name="Customer" EntityType="Enders.Customer"/>
 				<EntitySet Name="Order" EntityType="Enders.Order"/>
 			</EntityContainer>
-			<Annotations Target="Enders.Basket/kunnr"
+			<Annotations Target="Enders.Basket"
 				xmlns="http://docs.oasis-open.org/odata/ns/edm">
-			</Annotations>			
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="KUNNR" />
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MATNR" />
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MAKTX" />
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="AUMNG" />
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>		
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

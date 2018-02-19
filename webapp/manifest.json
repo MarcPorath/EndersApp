@@ -15,11 +15,10 @@
 		},
 		"dataSources": {
 			"Enders": {
-				"uri": "",
+				"uri": "/",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
+					"odataVersion": "2.0"
 				}
 			}
 		}
@@ -189,16 +188,11 @@
 					"bundleName": "EndersApp.i18n.i18n"
 				}
 			},
-			"basket": {
-				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneTime",
-					"defaultCountMode": "Request",
-					"serviceUrl" : "/"
-				},
+			"": {
 				"dataSource": "Enders",
-				"preload": true
+				"settings": {
+					"defaultBindingMode": "TwoTime"
+				}
 			}
 		},
 		"resources": {

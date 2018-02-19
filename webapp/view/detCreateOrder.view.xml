@@ -5,11 +5,9 @@
 		<m:VBox fitContainer="true">
 		<smartFilterBar:SmartFilterBar 
 			id="smartFilterBar"
-			entityType="Basket">
+			entitySet="Basket">
 			<smartFilterBar:controlConfiguration>
-				<smartFilterBar:ControlConfiguration
-					key="KUNNR" visibleInAdvancedArea="true"
-					preventInitialDataFetchInValueHelpDialog="false">
+				<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true">
 				</smartFilterBar:ControlConfiguration>
 			</smartFilterBar:controlConfiguration>
 		</smartFilterBar:SmartFilterBar>
@@ -19,14 +17,15 @@
 				tableType="ResponsiveTable" 
 				editable="false"
 				entitySet="Basket" 
-				useVariantManagement="false"
+				useVariantManagement="true"
+				showVariantManagement="true"
 				useTablePersonalisation="true" 
 				header="Basket" 
 				showRowCount="true"
 				useExportToExcel="true" 
 				enableAutoBinding="true">
 			<smartTable:layoutData>
-		        <m:FlexItemData growFactor="1"/>
+		        <m:FlexItemData growFactor="20"/>
 		    </smartTable:layoutData>
 			</smartTable:SmartTable>
 		</m:VBox>
