@@ -12,12 +12,12 @@
 								<form:formContainers>
 									<form:FormContainer visible="true">
 										<form:formElements class="debInfForm">
-											<form:FormElement visible="true" class="debInfForm">
+											<form:FormElement visible="true" class="debInfForm" id="test">
 												<form:label>
 													<Label text="{i18n>kunnr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="KUNNR" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="KUNNR" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_kunnr"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -25,7 +25,7 @@
 													<Label text="{i18n>NAME1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="NAME1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME1" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name1" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -33,7 +33,7 @@
 													<Label text="{i18n>NAME2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="NAME2" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME2" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name2" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -41,7 +41,7 @@
 													<Label text="{i18n>NAME3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="NAME3" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME3" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name3" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -49,7 +49,7 @@
 													<Label text="{i18n>NAME4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="NAME4" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="NAME4" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name4" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -57,9 +57,9 @@
 													<Label text="{i18n>addr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="ADDR" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="ADDR" class="debInfForm"/>
-													<Text text="PLZ" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="PLZ" class="debInfForm"/>
-													<Text text="ORT" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="ORT01" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_stras" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="l_plz01" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="l_ort01" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -67,7 +67,7 @@
 													<Label text="{i18n>phone}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="TELEFON" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="phone" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_tel01" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -75,7 +75,7 @@
 													<Label text="{i18n>fax}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="FAX" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="FAX" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_telfx" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -83,7 +83,7 @@
 													<Label text="{i18n>mail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="MAIL" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="MAIL" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_mail" class="debInfForm"/>
 												</form:fields>
 											</form:FormElement>
 										</form:formElements>
@@ -106,15 +106,7 @@
 													<Label text="{i18n>kungr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>pricegroup}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_konda"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -122,7 +114,7 @@
 													<Label text="{i18n>OPtotal}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_optotal"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -130,7 +122,7 @@
 													<Label text="{i18n>lastOPdate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_oldop"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -138,7 +130,7 @@
 													<Label text="{i18n>lastOPvalue}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
 												</form:label>
 												<form:fields>
-													<Text text="Field" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
+													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_olddate"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">
@@ -235,7 +227,7 @@
 										<form:formElements>
 											<form:FormElement visible="true">
 												<form:fields>
-													<TextArea rows="4" cols="20" maxLength="0" wrapping="None" visible="true"/>
+													<TextArea rows="4" cols="20" maxLength="0" wrapping="None" visible="true" id="l_note"/>
 												</form:fields>
 											</form:FormElement>
 											<form:FormElement visible="true">

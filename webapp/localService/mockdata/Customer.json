@@ -5,6 +5,16 @@
 	"ort01": "Bergatreute-Witschwende",
 	"plz01": "88368",
 	"tel01": "07527-1648",
+	"name3": "",
+	"name4": "",
+	"stras": "Alttanner Weg 17",
+	"telfx": "075271695",
+	"mail": "",
+	"konda": "03",
+	"optotal": "3500,00",
+	"oldop": "01.01.2018",
+	"olddate": "350,00",
+	"note": "Möchte nur vormittags angefahren werden!",
 	"__metadata": {
 		"uri": "Customer(kunnr=1000418)",
 		"type": "Enders.Customer"
@@ -16,6 +26,16 @@
 	"ort01": "Reiskirchen",
 	"plz01": "35447",
 	"tel01": "06408-504536",
+	"name3": "",
+	"name4": "",
+	"stras": "Bänningerstr. 4",
+	"telfx": "",
+	"mail": "",
+	"konda": "01",
+	"optotal": "4500,00",
+	"oldop": "01.01.2018",
+	"olddate": "150,00",
+	"note": "Kein Fleisch anbieten!",
 	"__metadata": {
 		"uri": "Customer(kunnr=1022581)",
 		"type": "Enders.Customer"

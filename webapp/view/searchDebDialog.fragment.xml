@@ -9,7 +9,8 @@
 					<IconTabFilter icon="sap-icon://collaborate" iconColor="Neutral" text="{i18n>bplan}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<Table width="100%" noDataText="No Data" mode="None" items="{path: '/Customer'}" itemPress="onItemPress" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+							<Table width="100%" noDataText="No Data" mode="None" items="{path: '/Customer'}" itemPress="onItemPress" showSeparators="All" growing="true"
+								growingThreshold="20" growingScrollToLoad="true">
 								<infoToolbar/>
 								<headerToolbar/>
 								<columns>
@@ -22,6 +23,18 @@
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
 											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>name2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>stras}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
 										</header>
 										<footer/>
 									</Column>
@@ -41,10 +54,13 @@
 								<items>
 									<ColumnListItem id="columnListItem" vAlign="Middle" type="Navigation">
 										<cells>
-											<Text id="kunnr1" text="{kunnr}" maxLines="2" />
-											<Text id="name11" text="{name1}" maxLines="2" />
-											<Text id="ort011" text="{ort01}" maxLines="2" />
-											<Text id="tel011" text="{tel01}" maxLines="2" />
+											<Text id="kunnr1" text="{kunnr}" maxLines="2"/>
+											<Text id="name11" text="{name1}" maxLines="2"/>
+											<Text id="name21" text="{name2}" maxLines="2"/>
+											<Text id="stras1" text="{stras}" maxLines="2"/>
+											<Text id="ort011" text="{ort01}" maxLines="2"/>
+											<Text id="tel011" text="{tel01}" maxLines="2"/>
+											
 										</cells>
 									</ColumnListItem>
 								</items>
@@ -55,12 +71,15 @@
 					<IconTabFilter icon="sap-icon://search" iconColor="Neutral" text="{i18n>dbsearch}" count="3" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<SearchField id="kunnr" placeholder="{i18n>kunnr}" visible="true" width="50%" liveChange="filterData"/>
-							<SearchField id="name1" placeholder="{i18n>name1}" visible="true" width="50%" liveChange="filterData"/>
-							<SearchField id="ort01" placeholder="{i18n>ort01}" visible="true" width="50%" liveChange="filterData"/>
-							<SearchField id="tel01" placeholder="{i18n>tel01}" visible="true" width="50%" liveChange="filterData"/>
+							<SearchField id="kunnr" placeholder="{i18n>kunnr}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
+							<SearchField id="name1" placeholder="{i18n>name1}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
+							<SearchField id="name2" placeholder="{i18n>name2}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
+							<SearchField id="stras" placeholder="{i18n>stras}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
+							<SearchField id="ort01" placeholder="{i18n>ort01}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
+							<SearchField id="tel01" placeholder="{i18n>tel01}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
 							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-							<Table width="100%" id="table_deb" noDataText="No data" mode="SingleSelect" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" selectionChange="selectItem" growingScrollToLoad="true">
+							<Table width="100%" id="table_deb" noDataText="No data" mode="SingleSelect" items="{path: '/Customer'}" showSeparators="All" growing="true"
+								growingThreshold="20" selectionChange="selectItem" growingScrollToLoad="true">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -82,6 +101,18 @@
 										</header>
 										<footer/>
 									</Column>
+										<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>name2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>stras}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</header>
+										<footer/>
+									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
 											<Text text="{i18n>ort01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
@@ -97,10 +128,12 @@
 								</columns>
 								<ColumnListItem>
 									<cells>
-										<Text id="kunnr2" text="{kunnr}" maxLines="2" />
-										<Text id="name12" text="{name1}" maxLines="2" />
-										<Text id="ort012" text="{ort01}" maxLines="2" />
-										<Text id="tel012" text="{tel01}" maxLines="2" />
+										<Text id="kunnr2" text="{kunnr}" maxLines="2"/>
+										<Text id="name12" text="{name1}" maxLines="2"/>
+										<Text id="name22" text="{name2}" maxLines="2"/>
+										<Text id="stras2" text="{stras}" maxLines="2"/>
+										<Text id="ort012" text="{ort01}" maxLines="2"/>
+										<Text id="tel012" text="{tel01}" maxLines="2"/>
 									</cells>
 								</ColumnListItem>
 							</Table>
