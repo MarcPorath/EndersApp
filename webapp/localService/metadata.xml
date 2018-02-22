@@ -4,11 +4,6 @@
 	<edmx:DataServices m:DataServiceVersion="2.0">
 		<Schema Namespace="Enders" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 			<EntityType Name="Basket">
-				<Key>
-					<PropertyRef Name="kunnr"/>
-					<PropertyRef Name="matnr"/>
-					<PropertyRef Name="maktx"/>
-				</Key>
 				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="18" Name="MATNR" Type="Edm.Guid" sap:filterable="true"

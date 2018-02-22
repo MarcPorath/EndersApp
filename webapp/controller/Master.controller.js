@@ -9,11 +9,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 		return Controller.extend("EndersApp.controller.Master", {
 
 			onInit: function() {
-
+				debugger;
+				this.getView().setModel(this.getOwnerComponent().getModel("undefined")); 
 				this.checkSelection();
 				
 			},
-
+			
 			checkSelection: function() {
 				if (this.byId("kunnr_m").getText() === "") {
 					this.byId("ActionListMain").setVisible(false);

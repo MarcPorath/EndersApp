@@ -25,7 +25,7 @@
 				useExportToExcel="true" 
 				enableAutoBinding="true">
 			<smartTable:layoutData>
-		        <m:FlexItemData growFactor="20"/>
+		        <m:FlexItemData growFactor="1"/>
 		    </smartTable:layoutData>
 			</smartTable:SmartTable>
 		</m:VBox>
