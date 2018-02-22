@@ -456,7 +456,7 @@
 			"helpUrl": "http://eslint.org/docs/rules/no-native-reassign"
 		},
 		"sap-no-global-define": {
-			"severity": "error",
+			"severity": "info",
 			"category": "Fiori Architectural Guidelines",
 			"helpUrl": "https://help.hana.ondemand.com/webide/frameset.htm?182ab2fee1b546b682f43a8342d92110.html"
 		},

@@ -93,7 +93,7 @@
 		"sap-message-toast": 1,
 		"space-after-function-name": 0,
 		"no-native-reassign": 2,
-		"sap-no-global-define": 2,
+		"sap-no-global-define": 1,
 		"sap-ui5-no-private-prop": 1,
 		"no-process-env": 0,
 		"comma-dangle": 1,
