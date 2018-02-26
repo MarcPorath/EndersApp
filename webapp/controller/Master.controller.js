@@ -9,8 +9,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 		return Controller.extend("EndersApp.controller.Master", {
 
 			onInit: function() {
-				debugger;
-				this.getView().setModel(this.getOwnerComponent().getModel("undefined")); 
 				this.checkSelection();
 				
 			},

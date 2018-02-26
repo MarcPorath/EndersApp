@@ -18,7 +18,8 @@
 				"uri": "/",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0"
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
 				}
 			}
 		}
@@ -188,11 +189,13 @@
 					"bundleName": "EndersApp.i18n.i18n"
 				}
 			},
-			"": {
+			"odata": {
+				"type" : "sap.ui.model.odata.v2.ODataModel",
 				"dataSource": "Enders",
 				"settings": {
 					"defaultBindingMode": "TwoWay"
-				}
+				},
+				"preload": true
 			}
 
 		},
