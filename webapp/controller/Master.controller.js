@@ -49,6 +49,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				this.getView().byId("searchDebDialog").close();
 				sap.m.MessageToast.show("Es wurde kein Kunde ausgewählt");
 			},
+			
+			testpress: function(){
+			sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
+			
+			},
 			toCreateOrder: function(oEvent) {
 				if (selectedCust === "") {
 					sap.m.MessageToast("Bitte vorher einen Kunden auswählen");

@@ -4,60 +4,62 @@
 	<edmx:DataServices m:DataServiceVersion="2.0">
 		<Schema Namespace="Enders" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 			<EntityType Name="Basket">
-				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="true"
-					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="MATNR" Type="Edm.Guid" sap:filterable="true"
-					sap:label="Materialnummer"/>
+				<Key>
+					<PropertyRef Name="MATNR"/>
+				</Key>
+				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="true" sap:label="Kundennummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="MATNR" Type="Edm.Guid" sap:filterable="true" sap:label="Materialnummer"/>
 				<Property MaxLength="40" Name="MAKTX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Artikeltext" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="40" Name="GRTXT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="2te Zeile" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="MATKL" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
-					sap:label="Warengruppe" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="3" Name="DSD" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="DSD" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="GRTXT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="2te Zeile"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="MATKL" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="Warengruppe"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="DSD" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="DSD"
+					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="LASTVKDATE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="L.Verk.dat" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="LASTVKMEN" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
 					sap:label="L.Verk.mng" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="TOTVK" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
-					sap:label="Tot.Vk" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZLPM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zlpm" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZIDV" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zidv" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZAKT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zakt" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZPRO" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zpro" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZVKM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zvkm" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="ZEKP" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zekp" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZVEK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zvek" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZPRM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zprm" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZPR0" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zpr0" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="ZDAR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="zdar" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="PDIFF" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="pdiff" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="MEINS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Meins" sap:sortable="false" sap:updatable="false"/>	
+				<Property MaxLength="10" Name="TOTVK" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="Tot.Vk"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZLPM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zlpm"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZIDV" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zidv"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZAKT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zakt"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZPRO" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zpro"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZVKM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zvkm"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZEKP" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zekp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZVEK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zvek"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZPRM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zprm"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZPR0" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zpr0"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZDAR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zdar"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="PDIFF" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="pdiff"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="MEINS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Meins"
+					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="ZZGEBINDE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Gebinde" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="AUMNG" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="aumng" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="VRKME" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="VMeins" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="MGr1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="mvgr1" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="KONDM" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
-					sap:label="kondm" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="10" Name="MTPOS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="MTPOS" sap:sortable="false" sap:updatable="false"/>
+					sap:label="Gebinde" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="AUMNG" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="aumng"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="VRKME" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="VMeins"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="MGr1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="mvgr1"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="KONDM" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="kondm"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="MTPOS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="MTPOS"
+					sap:sortable="false" sap:updatable="false"/>
 			</EntityType>
 			<EntityType Name="Customer">
 				<Key>
@@ -65,16 +67,28 @@
 				</Key>
 				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="name1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Name 1" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="name2" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Name 2" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="18" Name="ort01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Ort 1" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="18" Name="plz01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Plz 1" sap:sortable="false" sap:updatable="false"/>	
-				<Property MaxLength="18" Name="tel01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:label="Tel 1" sap:sortable="false" sap:updatable="false"/>					
+				<Property MaxLength="18" Name="name1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 1"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="name2" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 2"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="ort01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="plz01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="tel01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefon"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="name3" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 3"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="name4" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 4"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="stras" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Strasse"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="telfx" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Fax"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="mail" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Mail"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="18" Name="konda" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Kundengruppe" sap:sortable="false" sap:updatable="false"/>
 			</EntityType>
 			<EntityType Name="Order">
 				<Key>
@@ -82,34 +96,56 @@
 				</Key>
 				<Property MaxLength="10" Name="vbeln" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Vertriebsbelegr" sap:sortable="true" sap:updatable="false"/>
-				<Property MaxLength="10" Name="angel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
-					sap:label="Name 1" sap:sortable="true" sap:updatable="false"/>
-			</EntityType>			
-			<EntityContainer m:IsDefaultEntityContainer="true"
-				sap:supported-formats="atom json">
+				<Property MaxLength="10" Name="angel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Name 1"
+					sap:sortable="true" sap:updatable="false"/>
+			</EntityType>
+			<EntityContainer m:IsDefaultEntityContainer="true" sap:supported-formats="atom json">
 				<EntitySet Name="Basket" EntityType="Enders.Basket"/>
 				<EntitySet Name="Customer" EntityType="Enders.Customer"/>
 				<EntitySet Name="Order" EntityType="Enders.Order"/>
 			</EntityContainer>
-			<Annotations Target="Enders.Basket"
-				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="Enders.Basket" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
 					<Collection>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="KUNNR" />
+							<PropertyValue Property="Value" Path="KUNNR"/>
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="MATNR" />
+							<PropertyValue Property="Value" Path="MATNR"/>
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="MAKTX" />
+							<PropertyValue Property="Value" Path="MAKTX"/>
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="AUMNG" />
+							<PropertyValue Property="Value" Path="AUMNG"/>
 						</Record>
 					</Collection>
 				</Annotation>
-			</Annotations>		
+			</Annotations>
+			<Annotations Target="Enders.Customer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="kunnr"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="name1"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="name2"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="stras"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="ort01"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="tel01"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>
