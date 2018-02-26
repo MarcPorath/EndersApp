@@ -5,6 +5,7 @@
 		<Schema Namespace="Enders" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 			<EntityType Name="Basket">
 				<Key>
+					<PropertyRef Name="KUNNR"/>
 					<PropertyRef Name="MATNR"/>
 				</Key>
 				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="true" sap:label="Kundennummer"
@@ -50,7 +51,7 @@
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="ZZGEBINDE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Gebinde" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="AUMNG" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="aumng"
+				<Property MaxLength="10" Name="AUMNG" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Mind.Menge"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="VRKME" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="VMeins"
 					sap:sortable="false" sap:updatable="false"/>

@@ -3,30 +3,31 @@
 	controllerName="EndersApp.controller.detCreateOrder" height="100%">
 	<m:Page title="Warenkorb" showNavButton="true">
 		<m:VBox fitContainer="true">
-		<smartFilterBar:SmartFilterBar 
-			id="smartFilterBar"
-			entitySet="Basket">
-			<smartFilterBar:controlConfiguration>
-				<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true">
-				</smartFilterBar:ControlConfiguration>
-			</smartFilterBar:controlConfiguration>
-		</smartFilterBar:SmartFilterBar>
-			<smartTable:SmartTable 
-				id="smartTable_ResponsiveTable"
-				smartFilterId="smartFilterBar" 
-				tableType="ResponsiveTable" 
-				editable="false"
-				entitySet="Basket" 
-				useVariantManagement="true"
-				showVariantManagement="true"
-				useTablePersonalisation="true" 
-				header="Basket" 
-				showRowCount="true"
-				useExportToExcel="true" 
-				enableAutoBinding="true">
-			<smartTable:layoutData>
-		        <m:FlexItemData growFactor="1"/>
-		    </smartTable:layoutData>
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Basket" persistencyKey="SmartFilterPKey">
+				<smartFilterBar:controlConfiguration>
+					<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+				</smartFilterBar:controlConfiguration>
+			</smartFilterBar:SmartFilterBar>
+			<smartTable:SmartTable id="smartTable_ResponsiveTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false"
+				entitySet="Basket" useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Basket"
+				showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
+				<Table mode="SingleSelectMaster" growing="true">
+					<columns>
+						<Column id="meng" width="100px" hAlign="Begin">
+							<customData>
+								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"4"}'/>
+							</customData>
+							<Text text="Menge"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Input id="menge" name="Menge"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
 			</smartTable:SmartTable>
 		</m:VBox>
 	</m:Page>
