@@ -6,7 +6,10 @@ sap.ui.define([
 
 	return BaseController.extend("EndersApp.controller.detCreateOrder", {
 		onInit: function() {
-			this.getView().setModel(this.getOwnerComponent().getModel("undefined")); 
+			var oTable = this.getView().byId("warenkorbTable");
+			oTable.setModel(this.getOwnerComponent().getModel());
+			
+
 			
 		}
 

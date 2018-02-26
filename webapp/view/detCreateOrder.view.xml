@@ -8,10 +8,10 @@
 					<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
 				</smartFilterBar:controlConfiguration>
 			</smartFilterBar:SmartFilterBar>
-			<smartTable:SmartTable id="smartTable_ResponsiveTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false"
+			<smartTable:SmartTable id="warenkorbTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false"
 				entitySet="Basket" useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Basket"
 				showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
-				<Table mode="SingleSelectMaster" growing="true">
+				<Table mode="SingleSelectMaster" growing="true" id="table">
 					<columns>
 						<Column id="meng" width="100px" hAlign="Begin">
 							<customData>

@@ -117,9 +117,6 @@
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="MAKTX"/>
 						</Record>
-						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="AUMNG"/>
-						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
