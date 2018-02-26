@@ -1,27 +1,31 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.searchDebDialog">
-	<Dialog id="searchDebDialog" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Title" type="Standard" verticalScrolling="true">
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.searchDebDialog">
+	<Dialog id="searchDebDialog" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Title" type="Standard"
+		verticalScrolling="true">
 		<content>
-			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="Ok">
+			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
+				selectedKey="Ok">
 				<items>
-					<IconTabFilter icon="sap-icon://collaborate" iconColor="Neutral" text="{i18n>bplan}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+					<IconTabFilter icon="sap-icon://collaborate" iconColor="Neutral" text="{i18n>bplan}" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<VBox id="vBox1">
-								
-							<items>
-								
-				<smartTable:SmartTable id="smartTable_ResponsiveTable"  tableType="Table"  editable="false" entitySet="Customer" useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Customer" showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
-			<smartTable:layoutData>
-		        <FlexItemData growFactor="1"/>
-		    </smartTable:layoutData>
-		    
-			</smartTable:SmartTable>
-							</items>
-								
+								<items>
+									<smartTable:SmartTable id="smartTable_ResponsiveTable" tableType="Table" editable="false" entitySet="Customer" useVariantManagement="true"
+										showVariantManagement="true" useTablePersonalisation="true" header="Customer" showRowCount="true" useExportToExcel="false"
+										enableAutoBinding="true">
+										<smartTable:layoutData>
+											<FlexItemData growFactor="1"/>
+										</smartTable:layoutData>
+										<Table mode="SingleSelectMaster" selectionChange="onItemPress"></Table>
+									</smartTable:SmartTable>
+								</items>
 							</VBox>
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://search" iconColor="Neutral" text="{i18n>dbsearch}" count="3" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+					<IconTabFilter icon="sap-icon://search" iconColor="Neutral" text="{i18n>dbsearch}" design="Vertical" showAll="false" textDirection="Inherit"
+						enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<SearchField id="kunnr" placeholder="{i18n>kunnr}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
 							<SearchField id="name1" placeholder="{i18n>name1}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
@@ -29,65 +33,19 @@
 							<SearchField id="stras" placeholder="{i18n>stras}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
 							<SearchField id="ort01" placeholder="{i18n>ort01}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
 							<SearchField id="tel01" placeholder="{i18n>tel01}" visible="true" width="30%" liveChange="filterData" showSearchButton="false"/>
-							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-							<Table width="100%" id="table_deb" noDataText="No data" mode="SingleSelect" items="{path: '/Customer'}" showSeparators="All" growing="true" growingThreshold="20" selectionChange="selectItem" growingScrollToLoad="true">
-								<infoToolbar>
-									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
-										<content>
-											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
-										</content>
-									</Toolbar>
-								</infoToolbar>
-								<headerToolbar/>
-								<columns>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>kunnr}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>name1}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-										<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>name2}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>stras}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>ort01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="{i18n>tel01}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-										</header>
-										<footer/>
-									</Column>
-								</columns>
-								<ColumnListItem>
-									<cells>
-										<Text id="kunnr2" text="{kunnr}" maxLines="2"/>
-										<Text id="name12" text="{name1}" maxLines="2"/>
-										<Text id="name22" text="{name2}" maxLines="2"/>
-										<Text id="stras2" text="{stras}" maxLines="2"/>
-										<Text id="ort012" text="{ort01}" maxLines="2"/>
-										<Text id="tel012" text="{tel01}" maxLines="2"/>
-									</cells>
-								</ColumnListItem>
-							</Table>
+							<Button text="{i18n>searchButton}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" press="setEntityST" iconDensityAware="false"/>
+							<VBox id="vBox2">
+								<items>
+									<smartTable:SmartTable id="smartTable_searchResults" tableType="Table" editable="false" useVariantManagement="true"
+										showVariantManagement="true" useTablePersonalisation="true" header="Customer" showRowCount="true" useExportToExcel="false"
+										enableAutoBinding="true">
+										<smartTable:layoutData>
+											<FlexItemData growFactor="1"/>
+										</smartTable:layoutData>
+										<Table mode="SingleSelectMaster" selectionChange="onItemPress" id="table_deb"></Table>
+									</smartTable:SmartTable>
+								</items>
+							</VBox>
 						</content>
 					</IconTabFilter>
 				</items>
@@ -98,8 +56,8 @@
 		</content>
 		<beginButton/>
 		<buttons>
-			<Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="entryDeb"/>
-			<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="closeSearchDialog"/>
+			<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="closeSearchDialog"/>
 		</buttons>
 		<customHeader/>
 		<endButton/>

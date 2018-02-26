@@ -108,13 +108,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				
 			},
 			onItemPress: function(oEvent) {
-
-				selectedCust = oEvent.getParameter("listItem").getBindingContext().getObject();
 				debugger;
+				selectedCust = oEvent.getParameter("listItem").getBindingContext().getObject();
 				this.entryDeb(oEvent);
 
 			},
 			selectItem: function(oControlEvent) {
+				debugger;
 				selectedCust = oControlEvent.getParameter("listItem").getBindingContext().getObject();
 			},
 			filterData: function(oEvent) {
@@ -145,6 +145,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					if (filters.length > 0) {
 						this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
 					}
+				},
+				setEntityST: function() {
+					debugger;
+					var sTable = this.byId("smartTable_searchResults");
+					sTable.setEntitySet("Customer");
+					
 				}
 				// _readSpecificCustomer: function(){
 				// 	var aFilter = [];
