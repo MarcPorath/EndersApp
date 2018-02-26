@@ -9,7 +9,7 @@
 								
 							<items>
 								
-				<smartTable:SmartTable id="smartTable_ResponsiveTable"  tableType="Table" press="testpress" editable="false" entitySet="Customer" useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Customer" showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
+				<smartTable:SmartTable id="smartTable_ResponsiveTable"  tableType="Table"  editable="false" entitySet="Customer" useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Customer" showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
 			<smartTable:layoutData>
 		        <FlexItemData growFactor="1"/>
 		    </smartTable:layoutData>
