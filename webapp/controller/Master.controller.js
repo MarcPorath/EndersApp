@@ -10,7 +10,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 
 			onInit: function() {
 				this.checkSelection();
-				
+				debugger;
 			},
 			
 			checkSelection: function() {

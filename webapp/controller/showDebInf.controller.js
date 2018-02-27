@@ -11,6 +11,8 @@ sap.ui.define([
 ,
 onInit: function(){
 	//Ausbauen sobald binding erfolgt
+	
+	
 	debugger;
 	
 

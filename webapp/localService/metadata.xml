@@ -56,13 +56,13 @@
 				</Key>
 				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="name1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 1"
+				<Property MaxLength="18" Name="name1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Name 1"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="name2" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 2"
+				<Property MaxLength="18" Name="name2" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Name 2"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="ort01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort"
+				<Property MaxLength="18" Name="ort01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Ort"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="plz01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Plz"
+				<Property MaxLength="18" Name="plz01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Plz"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="18" Name="tel01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefon"
 					sap:sortable="false" sap:updatable="false"/>
