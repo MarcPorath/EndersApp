@@ -3,15 +3,21 @@ sap.ui.define([
 	"sap/m/MessageBox"
 ], function(BaseController) {
 	"use strict";
+	
+	var selectedCust;
 
 	return BaseController.extend("EndersApp.controller.detCreateOrder", {
 		onInit: function() {
-			var oTable = this.getView().byId("warenkorbTable");
-			oTable.setModel(this.getOwnerComponent().getModel());
-			
-
-			
-		}
+			debugger;
+			this.selectedCust = this.getOwnerComponent().selectedCust;
+		},
+		
+		onTableRebind: function(oControlEvent) {
+			debugger;
+			var filters = [];
+			filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.selectedCust.kunnr));
+			oControlEvent.getParameters().bindingParams.filters = filters;
+		},
 
 	// 	onInit: function() {
 	// 		var oBSKTable = this.getView().byId("baskTable");
@@ -47,27 +53,27 @@ sap.ui.define([
 // 			}
 // 		);
 // 	}
-	// 	goBackAndReject: function(oEvent) {
-	// 		var that = this;
-	// 		sap.m.MessageBox.confirm(
-	// 			'{i18n>cancelCO}', {
-	// 				icon: sap.m.MessageBox.Icon.WARNING,
-	// 				title: '{i18n>abort}',
-	// 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
-	// 				onClose: function(oAction) {
-	// 					if (oAction === sap.m.MessageBox.Action.YES) {
-	//						var oMainView = sap.ui.getCore().byId("__xmlview0");
-	//						var oSplitContainer = oMainView.byId("mainView");
-	//						oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
-	// 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
-	// 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-	// 						oRouter.navTo("mainDetail");
-	// 					}
+	 	goBackAndReject: function(oEvent) {
+	 		var that = this;
+	 		sap.m.MessageBox.confirm(
+	 			"{i18n>cancelCO}", {
+	 				icon: sap.m.MessageBox.Icon.WARNING,
+	 				title: "{i18n>abort}",
+	 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
+	 				onClose: function(oAction) {
+	 					if (oAction === sap.m.MessageBox.Action.YES) {
+							var oMainView = sap.ui.getCore().byId("__xmlview0");
+							var oSplitContainer = oMainView.byId("mainView");
+							oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
+	 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
+	 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
+	 						oRouter.navTo("mainDetail");
+	 					}
 
-	// 				}
-	// 			}
-	// 		);
-	// 	},
+	 				}
+	 			}
+	 		);
+	 	}
 		
 	// 	matDetail: function(oEvent) {
 	// 					if (!this._oPopover) {

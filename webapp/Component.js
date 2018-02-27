@@ -54,6 +54,7 @@ sap.ui.define([
 			this.setModel(oAppModel);
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			this.selectedCust = {};
 			// Routerinitialize
 			this.getRouter().initialize();
 		}

@@ -49,12 +49,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			},
 			
 			testpress: function(){
-			sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
+			sap.m.MessageToast.show("Bitte vorher einen Kunden auswählen");
 			
 			},
 			toCreateOrder: function(oEvent) {
-				if (selectedCust === "") {
-					sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
+				if (this.selectedCust === "") {
+					sap.m.MessageToast.show("Bitte vorher einen Kunden auswählen");
 				} else {
 					var oMainView = sap.ui.getCore().byId("__xmlview0");
 					var oSplitContainer = oMainView.byId("mainView");
@@ -83,17 +83,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			},
 
 			entryDeb: function(oEvent) {
-				this.byId("kunnr_m").setText(selectedCust.kunnr);
+				this.selectedCust = this.getOwnerComponent().selectedCust;
+				this.byId("kunnr_m").setText(this.selectedCust.kunnr);
 				this.checkSelection();
 			
 				this.getView().byId("searchDebDialog").close();
 				if (selectedCheck === true) {
-					this.byId("kunnr_m").setText(selectedCust.kunnr);
-					this.byId("name1_m").setText(selectedCust.name1);
-					this.byId("name2_m").setText(selectedCust.name2);
-					this.byId("tel01_m").setText(selectedCust.tel01);
-					this.byId("ort01_m").setText(selectedCust.ort01);
-					this.byId("plz01_m").setText(selectedCust.plz01);
+					this.byId("kunnr_m").setText(this.selectedCust.kunnr);
+					this.byId("name1_m").setText(this.selectedCust.name1);
+					this.byId("name2_m").setText(this.selectedCust.name2);
+					this.byId("tel01_m").setText(this.selectedCust.tel01);
+					this.byId("ort01_m").setText(this.selectedCust.ort01);
+					this.byId("plz01_m").setText(this.selectedCust.plz01);
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -107,7 +108,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			},
 			onItemPress: function(oEvent) {
 				debugger;
-				selectedCust = oEvent.getParameter("listItem").getBindingContext().getObject();
+				this.getOwnerComponent().selectedCust = oEvent.getParameter("listItem").getBindingContext().getObject();
 				this.entryDeb(oEvent);
 
 			},

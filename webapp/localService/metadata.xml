@@ -8,22 +8,22 @@
 					<PropertyRef Name="KUNNR"/>
 					<PropertyRef Name="MATNR"/>
 				</Key>
-				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.Guid" sap:creatable="false" sap:filterable="true" sap:label="Kundennummer"
+				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Kundennummer"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="MATNR" Type="Edm.Guid" sap:filterable="true" sap:label="Materialnummer"/>
+				<Property MaxLength="18" Name="MATNR" Type="Edm.String" sap:filterable="true" sap:label="Materialnummer"/>
 				<Property MaxLength="40" Name="MAKTX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Artikeltext" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="40" Name="GRTXT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="2te Zeile"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="MATKL" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="Warengruppe"
+				<Property MaxLength="4" Name="MATKL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Warengruppe"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="3" Name="DSD" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="DSD"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="LASTVKDATE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="L.Verk.dat" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="LASTVKMEN" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false"
+				<Property MaxLength="10" Name="LASTVKMEN" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="L.Verk.mng" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="TOTVK" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="Tot.Vk"
+				<Property MaxLength="10" Name="TOTVK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Tot.Vk"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="MEINS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Meins"
 					sap:sortable="false" sap:updatable="false"/>
@@ -35,7 +35,7 @@
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="MGr1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="mvgr1"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="KONDM" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="kondm"
+				<Property MaxLength="10" Name="KONDM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="kondm"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="MTPOS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="MTPOS"
 					sap:sortable="false" sap:updatable="false"/>
@@ -45,7 +45,7 @@
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="PRICE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zpr0"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="PRHERK" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="Warengruppe"
+				<Property MaxLength="4" Name="PRHERK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Warengruppe"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="ZVEK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="pdiff"
 					sap:sortable="false" sap:updatable="false"/>
