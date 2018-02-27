@@ -12,7 +12,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				this.checkSelection();
 				debugger;
 			},
-			
+
 			checkSelection: function() {
 				if (this.byId("kunnr_m").getText() === "") {
 					this.byId("ActionListMain").setVisible(false);
@@ -24,12 +24,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.byId("displayDeb").setVisible(true);
 					this.byId("labSelDeb").setVisible(false);
 					selectedCheck = true;
-				
+
 				}
 
 			},
 			selectDebitor: function() {
-				//////Hier kommt der Aufruf der Debitoren Auswahl, danach wird gecheckt ob einer selektiert wurde
+
 
 				var oView = this.getView();
 				var oDialog = oView.byId("searchDebDialog");
@@ -46,11 +46,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			closeSearchDialog: function() {
 				this.getView().byId("searchDebDialog").close();
 				sap.m.MessageToast.show("Es wurde kein Kunde ausgewählt");
+				var sTable = this.byId("smartTable_searchResults");
+				if (sTable.getEntitySet() === "Customer") {
+
+					this.initSearchResTable();
+				}
 			},
-			
-			testpress: function(){
-			sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
-			
+
+			testpress: function() {
+				sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
+
 			},
 			toCreateOrder: function(oEvent) {
 				if (selectedCust === "") {
@@ -85,7 +90,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			entryDeb: function(oEvent) {
 				this.byId("kunnr_m").setText(selectedCust.kunnr);
 				this.checkSelection();
-			
+
 				this.getView().byId("searchDebDialog").close();
 				if (selectedCheck === true) {
 					this.byId("kunnr_m").setText(selectedCust.kunnr);
@@ -94,16 +99,20 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.byId("tel01_m").setText(selectedCust.tel01);
 					this.byId("ort01_m").setText(selectedCust.ort01);
 					this.byId("plz01_m").setText(selectedCust.plz01);
-///////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////
-///AUSBAUEN SOBALD INFOSCREEN ANGEPASST!!!!!
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///AUSBAUEN SOBALD INFOSCREEN ANGEPASST!!!!!
 					window.selCustGlobal = selectedCust;
-///////////////////////////////////////////////////////////////////////////////////////////
-				
+					///////////////////////////////////////////////////////////////////////////////////////////
+					var sTable = this.byId("smartTable_searchResults");
+					if (sTable.getEntitySet() === "Customer") {
+
+						this.initSearchResTable();
+					}
 				}
-				
+
 			},
 			onItemPress: function(oEvent) {
 				debugger;
@@ -139,16 +148,24 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			},
 			// filter OData with Filter Array
 			_applyOnModel: function() {
-					this.getView().byId("table_deb").getBinding("items").filter([]);
-					if (filters.length > 0) {
-						this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
-					}
-				},
-				setEntityST: function() {
+				this.getView().byId("table_deb").getBinding("items").filter([]);
+				if (filters.length > 0) {
+					this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
+				}
+			},
+			setEntityST: function() {
+				debugger;
+				var sTable = this.byId("smartTable_searchResults");
+				sTable.setEntitySet("Customer");
+
+			},
+			initSearchResTable: function() {
 					debugger;
 					var sTable = this.byId("smartTable_searchResults");
-					sTable.setEntitySet("Customer");
-					
+
+					sTable.setEntitySet("");
+					sTable.rebindTable();
+					sTable.setNoData();
 				}
 				// _readSpecificCustomer: function(){
 				// 	var aFilter = [];
