@@ -64,19 +64,19 @@
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="18" Name="plz01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Plz"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="tel01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefon"
+				<Property MaxLength="18" Name="tel01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Telefon"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="name3" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 3"
+				<Property MaxLength="18" Name="name3" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Name 3"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="name4" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name 4"
+				<Property MaxLength="18" Name="name4" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Name 4"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="stras" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Strasse"
+				<Property MaxLength="18" Name="stras" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Strasse"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="telfx" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Fax"
+				<Property MaxLength="18" Name="telfx" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Fax"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="mail" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Mail"
+				<Property MaxLength="18" Name="mail" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Mail"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="18" Name="konda" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+				<Property MaxLength="18" Name="konda" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Kundengruppe" sap:sortable="false" sap:updatable="false"/>
 			</EntityType>
 			<EntityType Name="Order">
