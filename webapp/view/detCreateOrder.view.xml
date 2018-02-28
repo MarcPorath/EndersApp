@@ -20,6 +20,12 @@
 				</smartTable:customToolbar>
 				<Table mode="SingleSelectMaster" growing="true" id="table">
 					<columns>
+						<Column id="zprm" width="100px" hAlign="Begin">
+							<customData>
+								<core:CustomData key="p13nData" value='\{"columnKey": "Man. Preis", "maxLength": "5","columnIndex":"5"}'/>
+							</customData>
+							<Text text="Man. Preis"/>
+						</Column>						
 						<Column id="meng" width="100px" hAlign="Begin">
 							<customData>
 								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"6"}'/>
@@ -28,9 +34,10 @@
 						</Column>
 					</columns>
 					<items>
-						<ColumnListItem>
+						<ColumnListItem highlight="{path:'MATNR' , formatter:'.formatRowHighlight'}">
 							<cells>
-								<Input id="menge" name="Menge"/>
+								<Input id="zprm1" name="Man. Preis" placeholder="{PRICE}" submit="setPrice" />
+								<Input id="menge" name="Menge" placeholder="0"/>
 							</cells>
 						</ColumnListItem>
 					</items>

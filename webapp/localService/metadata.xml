@@ -97,9 +97,6 @@
 				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
 					<Collection>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="KUNNR"/>
-						</Record>
-						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="MATNR"/>
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
