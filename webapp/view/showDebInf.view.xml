@@ -10,7 +10,7 @@
 								columnsM="1">
 								<form:content>
 									<Label text="{i18n>kunnr}"/>
-									<Text text="" id="l_kunnr"/>
+									<Text text="{kunnr}" id="l_kunnr"/>
 									<Label text="{i18n>NAME1}"/>
 									<Text text="" id="l_name1"/>
 									<Label text="{i18n>NAME2}"/>
