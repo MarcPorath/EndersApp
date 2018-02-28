@@ -1,22 +1,36 @@
 sap.ui.define([
-	"./BaseController",
+	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox"
-], function(BaseController) {
+], function(Controller) {
 	"use strict";
-
-	return BaseController.extend("EndersApp.controller.detCreateOrder", {
+	
+	var selectedCust;
+	var _oRouter;
+	
+	return Controller.extend("EndersApp.controller.detCreateOrder", {
+         
 		onInit: function() {
-			var oTable = this.getView().byId("warenkorbTable");
-			oTable.setModel(this.getOwnerComponent().getModel());
-			
-
-			
-		}
-
-	// 	onInit: function() {
-	// 		var oBSKTable = this.getView().byId("baskTable");
-			
-	// 	},
+			this.selectedCust = this.getOwnerComponent().selectedCust;
+		},
+		onAfterRendering: function() {
+			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		    this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
+		},
+		handleRouteMatched : function (evt) {
+				    //Check whether is the detail page is matched.
+				    debugger;
+				    var filters = [];
+				    if (evt.getParameter("name") === "detCreateOrder") {
+				        this.getView().byId("table").getBinding("items").filters = filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
+				    }
+				    
+		},			
+		
+		onTableRebind: function(oControlEvent) {
+			var filters = [];
+			filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
+			oControlEvent.getParameters().bindingParams.filters = filters;
+		},
 
 	// 	avCheck: function() {
 	// 		sap.m.MessageToast.show("XX St verfügbar zum Wunschlieferdatum!");
@@ -47,27 +61,27 @@ sap.ui.define([
 // 			}
 // 		);
 // 	}
-	// 	goBackAndReject: function(oEvent) {
-	// 		var that = this;
-	// 		sap.m.MessageBox.confirm(
-	// 			'{i18n>cancelCO}', {
-	// 				icon: sap.m.MessageBox.Icon.WARNING,
-	// 				title: '{i18n>abort}',
-	// 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
-	// 				onClose: function(oAction) {
-	// 					if (oAction === sap.m.MessageBox.Action.YES) {
-	//						var oMainView = sap.ui.getCore().byId("__xmlview0");
-	//						var oSplitContainer = oMainView.byId("mainView");
-	//						oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
-	// 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
-	// 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-	// 						oRouter.navTo("mainDetail");
-	// 					}
+	 	goBackAndReject: function(oEvent) {
+	 		var that = this;
+	 		sap.m.MessageBox.confirm(
+	 			this.getView().getModel("i18n").getResourceBundle().getText("cancelCO"), {
+	 				icon: sap.m.MessageBox.Icon.WARNING,
+	 				title: this.getView().getModel("i18n").getResourceBundle().getText("abort"),
+	 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
+	 				onClose: function(oAction) {
+	 					if (oAction === sap.m.MessageBox.Action.YES) {
+							var oMainView = sap.ui.getCore().byId("__xmlview0");
+							var oSplitContainer = oMainView.byId("mainView");
+							oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
+	 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
+	 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
+	 						oRouter.navTo("mainDetail");
+	 					}
 
-	// 				}
-	// 			}
-	// 		);
-	// 	},
+	 				}
+	 			}
+	 		);
+	 	}
 		
 	// 	matDetail: function(oEvent) {
 	// 					if (!this._oPopover) {

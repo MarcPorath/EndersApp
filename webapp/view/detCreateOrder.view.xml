@@ -1,21 +1,28 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m"
 	controllerName="EndersApp.controller.detCreateOrder" height="100%">
-	<m:Page title="Warenkorb" showNavButton="true">
+	<m:Page title="Warenkorb" showNavButton="true" navButtonPress="goBackAndReject">
 		<m:VBox fitContainer="true">
 			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Basket" persistencyKey="SmartFilterPKey">
 				<smartFilterBar:controlConfiguration>
 					<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+					<smartFilterBar:ControlConfiguration key="KUNNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
 				</smartFilterBar:controlConfiguration>
 			</smartFilterBar:SmartFilterBar>
-			<smartTable:SmartTable id="warenkorbTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false"
-				entitySet="Basket" useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Basket"
-				showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
+			<smartTable:SmartTable id="warenkorbTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false" entitySet="Basket"
+				useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Basket" showRowCount="true"
+				useExportToExcel="false" enableAutoBinding="true" beforeRebindTable="onTableRebind">
+				<smartTable:customToolbar>
+					<OverflowToolbar design="Transparent">
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="Erweitern" press="addRow"/>
+					</OverflowToolbar>
+				</smartTable:customToolbar>
 				<Table mode="SingleSelectMaster" growing="true" id="table">
 					<columns>
 						<Column id="meng" width="100px" hAlign="Begin">
 							<customData>
-								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"4"}'/>
+								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"6"}'/>
 							</customData>
 							<Text text="Menge"/>
 						</Column>

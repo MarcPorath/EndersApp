@@ -131,7 +131,7 @@
 									<core:Title text="Notizen zum Kunden" level="Auto"/>
 								</form:title>
 								<form:content>
-									<TextArea rows="6" maxLength="0" wrapping="None" visible="true" id="l_note" width="100%"/>
+									<TextArea rows="9" maxLength="0" wrapping="None" visible="true" id="l_note" width="100%"/>
 									<Label text=""/>
 									<Text text=""/>
 									<Button id="saveNotes" text="{i18n>saveNote}" type="Emphasized"  press="saveNotes"/>
