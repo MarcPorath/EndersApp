@@ -19,9 +19,11 @@ sap.ui.define([
 		handleRouteMatched : function (evt) {
 				    //Check whether is the detail page is matched.
 				    debugger;
-				    var filters = [];
 				    if (evt.getParameter("name") === "detCreateOrder") {
-				        this.getView().byId("table").getBinding("items").filters = filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
+				       var filters = [];
+				       var s = this.getView().byId("warenkorbTable");
+				       filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
+				       s.getTable().getBinding("items").filters = filters;
 				    }
 				    
 		},			
