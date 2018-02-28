@@ -24,6 +24,13 @@ sap.ui.define([
 		getModel: function(sName) {
 			return this.getView().getModel(sName);
 		},
+		
+		handleRouteMatched : function (evt) {
+		    //Check whether is the detail page is matched.
+		    if (evt.getParameter("name") !== "detail") {
+		        return;
+		    //You code here to run every time when your detail page is called.
+		}		
 
 		/**
 		 * Convenience method for setting the view model in every controller of the application.

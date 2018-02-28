@@ -1,28 +1,36 @@
 sap.ui.define([
-	"./BaseController",
+	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox"
-], function(BaseController) {
+], function(Controller) {
 	"use strict";
 	
 	var selectedCust;
-
-	return BaseController.extend("EndersApp.controller.detCreateOrder", {
+	var _oRouter;
+	
+	return Controller.extend("EndersApp.controller.detCreateOrder", {
+         
 		onInit: function() {
-			debugger;
 			this.selectedCust = this.getOwnerComponent().selectedCust;
 		},
+		onAfterRendering: function() {
+			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		    this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
+		},
+		handleRouteMatched : function (evt) {
+				    //Check whether is the detail page is matched.
+				    debugger;
+				    var filters = [];
+				    if (evt.getParameter("name") === "detCreateOrder") {
+				        this.getView().byId("table").getBinding("items").filters = filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
+				    }
+				    
+		},			
 		
 		onTableRebind: function(oControlEvent) {
-			debugger;
 			var filters = [];
-			filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.selectedCust.kunnr));
+			filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
 			oControlEvent.getParameters().bindingParams.filters = filters;
 		},
-
-	// 	onInit: function() {
-	// 		var oBSKTable = this.getView().byId("baskTable");
-			
-	// 	},
 
 	// 	avCheck: function() {
 	// 		sap.m.MessageToast.show("XX St verfügbar zum Wunschlieferdatum!");
@@ -56,9 +64,9 @@ sap.ui.define([
 	 	goBackAndReject: function(oEvent) {
 	 		var that = this;
 	 		sap.m.MessageBox.confirm(
-	 			"{i18n>cancelCO}", {
+	 			this.getView().getModel("i18n").getResourceBundle().getText("cancelCO"), {
 	 				icon: sap.m.MessageBox.Icon.WARNING,
-	 				title: "{i18n>abort}",
+	 				title: this.getView().getModel("i18n").getResourceBundle().getText("abort"),
 	 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
 	 				onClose: function(oAction) {
 	 					if (oAction === sap.m.MessageBox.Action.YES) {

@@ -43,9 +43,9 @@
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="UMFAK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="MTPOS"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="PRICE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="zpr0"
+				<Property MaxLength="10" Name="PRICE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Preis"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="PRHERK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Warengruppe"
+				<Property MaxLength="4" Name="PRHERK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Preisherkunft"
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="ZVEK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="pdiff"
 					sap:sortable="false" sap:updatable="false"/>
@@ -105,6 +105,12 @@
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="MAKTX"/>
 						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="PRICE"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="PRHERK"/>
+						</Record>						
 					</Collection>
 				</Annotation>
 			</Annotations>
