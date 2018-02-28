@@ -25,7 +25,7 @@
 								<core:CustomData key="p13nData" value='\{"columnKey": "Man. Preis", "maxLength": "5","columnIndex":"5"}'/>
 							</customData>
 							<Text text="Man. Preis"/>
-						</Column>						
+						</Column>
 						<Column id="meng" width="100px" hAlign="Begin">
 							<customData>
 								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"6"}'/>
@@ -36,13 +36,20 @@
 					<items>
 						<ColumnListItem highlight="{path:'MATNR' , formatter:'.formatRowHighlight'}">
 							<cells>
-								<Input id="zprm1" name="Man. Preis" placeholder="{PRICE}" submit="setPrice" />
+								<Input id="zprm1" name="Man. Preis" placeholder="{PRICE}" submit="setPrice"/>
 								<Input id="menge" name="Menge" placeholder="0"/>
 							</cells>
 						</ColumnListItem>
 					</items>
 				</Table>
 			</smartTable:SmartTable>
-		</m:VBox>
+			</m:VBox>
+			<footer>
+				<OverflowToolbar id="otbFooter">
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Auftrag anlegen" press="confirmSave" />
+					<Button type="Reject" text="Zurück" press="goBackAndReject" />
+				</OverflowToolbar>
+			</footer>
 	</m:Page>
 </mvc:View>

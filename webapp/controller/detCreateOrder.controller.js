@@ -50,31 +50,31 @@ sap.ui.define([
 		// 		sap.m.MessageToast.show("XX St verfügbar zum Wunschlieferdatum!");
 		// 	},
 
-		// 	confirmSave: function() {
-		// 		var that = this;
-		// 		sap.m.MessageBox.confirm(
-		// 			'{i18n>confirmCO}', {
-		// 				icon: sap.m.MessageBox.Icon.SUCCESS,
-		// 				title: '{i18n>confirm}',
-		// 				actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
-		// 				onClose: function(oAction) {
-		// 				
-		// 					if (oAction === sap.m.MessageBox.Action.YES) {
-		// 						
-		//						var oMainView = sap.ui.getCore().byId("__xmlview0");
-		//						var oSplitContainer = oMainView.byId("mainView");
-		//						oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
+		confirmSave: function() {
+			var that = this;
+			sap.m.MessageBox.confirm(
+				this.getView().getModel("i18n").getResourceBundle().getText("confirmCO"), {
+					icon: sap.m.MessageBox.Icon.SUCCESS,
+					title: this.getView().getModel("i18n").getResourceBundle().getText("confirm"),
+					actions: [sap.m.MessageBox.Action.YES, sap.m.MessageBox.Action.NO],
+					onClose: function(oAction) {
 
-		// 						sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
-		// 						var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-		// 						oRouter.navTo("mainDetail");
-		// 						sap.m.MessageToast.show("{i18n>crOrderDone}");
-		// 					}
+						if (oAction === sap.m.MessageBox.Action.YES) {
 
-		// 				}
-		// 			}
-		// 		);
-		// 	}
+							var oMainView = sap.ui.getCore().byId("__xmlview0");
+							var oSplitContainer = oMainView.byId("mainView");
+							oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
+
+							sap.ui.getCore().byId("__component0---Master").byId("masterView").setBusy(false);
+							var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
+							oRouter.navTo("mainDetail");
+							sap.m.MessageToast.show("{i18n>crOrderDone}");
+						}
+
+					}
+				}
+			);
+		},
 		goBackAndReject: function(oEvent) {
 			var that = this;
 			sap.m.MessageBox.confirm(
@@ -97,10 +97,16 @@ sap.ui.define([
 			);
 		},
 		setPrice: function(oEvent) {
+			var oModel = new sap.ui.model.json.JSONModel();
 			debugger;
-			var s = this.getOwnerComponent().getModel().getProperty(oEvent.getSource().getBindingContext().getPath());
+			this.getOwnerComponent().getModel().read(oEvent.getSource().getBindingContext().getPath(), null, null, false, function(oData, oResponse){
+				oModel.setData(oData);
+			}, null);
+			
+			this.getOwnerComponent().setModel(oModel, "data");
+			
+			
 		}
-		
 
 		// 	matDetail: function(oEvent) {
 		// 					if (!this._oPopover) {
