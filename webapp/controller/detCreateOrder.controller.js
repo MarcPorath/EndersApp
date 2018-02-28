@@ -18,8 +18,9 @@ sap.ui.define([
 		},
 		handleRouteMatched : function (evt) {
 				    //Check whether is the detail page is matched.
-				    debugger;
+				    
 				    if (evt.getParameter("name") === "detCreateOrder") {
+				    	debugger;
 				       var filters = [];
 				       var s = this.getView().byId("warenkorbTable");
 				       filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));

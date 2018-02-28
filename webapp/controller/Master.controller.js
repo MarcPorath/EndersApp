@@ -52,17 +52,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.initSearchResTable();
 				}
 			},
-<<<<<<< HEAD
-
-			testpress: function() {
-				sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
-
-=======
-			
 			testpress: function(){
 			sap.m.MessageToast.show("Bitte vorher einen Kunden auswählen");
-			
->>>>>>> branch 'EndersApp' of https://github.com/MarcPorath/EndersApp
 			},
 			toCreateOrder: function(oEvent) {
 				if (this.selectedCust === "") {
@@ -101,19 +92,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 
 				this.getView().byId("searchDebDialog").close();
 				if (selectedCheck === true) {
-<<<<<<< HEAD
-					this.byId("kunnr_m").setText(selectedCust.kunnr);
-					this.byId("name1_m").setText(selectedCust.name1);
-					this.byId("name2_m").setText(selectedCust.name2);
-					this.byId("tel01_m").setText(selectedCust.tel01);
-					this.byId("ort01_m").setText(selectedCust.ort01);
-					this.byId("plz01_m").setText(selectedCust.plz01);
 					///////////////////////////////////////////////////////////////////////////////////////////
 					///////////////////////////////////////////////////////////////////////////////////////////
 					///////////////////////////////////////////////////////////////////////////////////////////
 					///////////////////////////////////////////////////////////////////////////////////////////
 					///AUSBAUEN SOBALD INFOSCREEN ANGEPASST!!!!!
-=======
 					this.byId("kunnr_m").setText(this.selectedCust.kunnr);
 					this.byId("name1_m").setText(this.selectedCust.name1);
 					this.byId("name2_m").setText(this.selectedCust.name2);
@@ -125,7 +108,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///AUSBAUEN SOBALD INFOSCREEN ANGEPASST!!!!!
->>>>>>> branch 'EndersApp' of https://github.com/MarcPorath/EndersApp
 					window.selCustGlobal = selectedCust;
 					///////////////////////////////////////////////////////////////////////////////////////////
 					var sTable = this.byId("smartTable_searchResults");
