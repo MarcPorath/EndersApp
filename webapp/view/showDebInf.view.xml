@@ -1,149 +1,55 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" controllerName="EndersApp.controller.showDebInf">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" controllerName="EndersApp.controller.showDebInf">
 	<App id="showDebInf">
 		<pages>
 			<Page title="debInfo">
 				<content>
 					<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="1" vSpacing="1">
 						<layout:content>
-							<form:Form width="100%" editable="true" visible="true">
-								<form:title>
-									<core:Title text="Kundendaten" level="Auto"/>
-								</form:title>
-								<form:formContainers>
-									<form:FormContainer visible="true">
-										<form:formElements class="debInfForm">
-											<form:FormElement visible="true" class="debInfForm" id="test">
-												<form:label>
-													<Label text="{i18n>kunnr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_kunnr"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>NAME1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name1" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>NAME2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name2" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>NAME3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name3" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>NAME4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_name4" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>addr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_stras" class="debInfForm"/>
-													<Text width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="l_plz01" class="debInfForm"/>
-													<Text width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" id="l_ort01" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>phone}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_tel01" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>fax}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_telfx" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>mail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" id="l_mail" class="debInfForm"/>
-												</form:fields>
-											</form:FormElement>
-										</form:formElements>
-										<form:title/>
-									</form:FormContainer>
-								</form:formContainers>
-								<form:layout>
-									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
-								</form:layout>
-							</form:Form>
-							<form:Form width="100%" editable="true" visible="true">
-								<form:title>
-									<core:Title text="Buchhaltung" level="Auto"/>
-								</form:title>
-								<form:formContainers>
-									<form:FormContainer visible="true">
-										<form:formElements>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>kungr}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_konda"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>OPtotal}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_optotal"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>lastOPdate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_oldop"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="{i18n>lastOPvalue}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" class="debInfForm"/>
-												</form:label>
-												<form:fields>
-													<Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" class="debInfForm" id="l_olddate"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<Button id="opAufruf" text="{i18n>goToOPs}" type="Emphasized" width="30%" press="goToOP"/>
-											</form:FormElement>
-										</form:formElements>
-										<form:title/>
-									</form:FormContainer>
-								</form:formContainers>
-								<form:layout>
-									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
-								</form:layout>
-							</form:Form>
+							<form:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+								columnsM="1">
+								<form:content>
+									<Label text="{i18n>kunnr}"/>
+									<Text text="" id="l_kunnr"/>
+									<Label text="{i18n>NAME1}"/>
+									<Text text="" id="l_name1"/>
+									<Label text="{i18n>NAME2}"/>
+									<Text text="" id="l_name2"/>
+									<Label text="{i18n>NAME3}"/>
+									<Text text="" id="l_name3"/>
+									<Label text="{i18n>NAME4}"/>
+									<Text text="" id="l_name4"/>
+									<Label text="{i18n>addr}"/>
+									<Text text="" id="l_stras"/>
+									<Text text="" id="l_plz01"/>
+									<Text text="" id="l_ort01"/>
+									<Label text="{i18n>phone}"/>
+									<Text text="" id="l_tel01"/>
+									<Label text="{i18n>fax}"/>
+									<Text text="" id="l_telfx"/>
+									<Label text="{i18n>mail}"/>
+									<Text text="" id="l_mail"/>
+								</form:content>
+							</form:SimpleForm>
+							<form:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+								columnsM="1">
+								<form:content>
+									<Label text="{i18n>kungr}"/>
+									<Text text="" id="l_konda"/>
+									<Label text="{i18n>OPtotal}"/>
+									<Text text="" id="l_optotal"/>
+									<Label text="{i18n>lastOPdate}"/>
+									<Text text="" id="l_oldop"/>
+									<Label text="{i18n>lastOPvalue}"/>
+									<Text text="" id="l_olddate"/>
+									<Label text=""/>
+									<Text text=""/>
+									<Label text=""/>
+									<Text text=""/>
+									<Label text=""/>
+									<Button id="opAufruf" text="{i18n>goToOPs}" type="Emphasized" press="goToOP"/>
+								</form:content>
+							</form:SimpleForm>
 						</layout:content>
 					</layout:Grid>
 					<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="1" vSpacing="1">
@@ -218,29 +124,19 @@
 									</ColumnListItem>
 								</items>
 							</Table>
-							<form:Form width="100%" editable="true" visible="true">
+							<form:SimpleForm editable="false" labelSpanL="3" labelSpanM="2" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"
+								layout="ResponsiveGridLayout">
+								
 								<form:title>
 									<core:Title text="Notizen zum Kunden" level="Auto"/>
 								</form:title>
-								<form:formContainers>
-									<form:FormContainer visible="true">
-										<form:formElements>
-											<form:FormElement visible="true">
-												<form:fields>
-													<TextArea rows="4" cols="20" maxLength="0" wrapping="None" visible="true" id="l_note"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<Button id="saveNotes" text="{i18n>saveNote}" type="Emphasized" width="30%" press="saveNotes"/>
-											</form:FormElement>
-										</form:formElements>
-										<form:title/>
-									</form:FormContainer>
-								</form:formContainers>
-								<form:layout>
-									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
-								</form:layout>
-							</form:Form>
+								<form:content>
+									<TextArea rows="9" maxLength="0" wrapping="None" visible="true" id="l_note" width="100%"/>
+									<Label text=""/>
+									<Text text=""/>
+									<Button id="saveNotes" text="{i18n>saveNote}" type="Emphasized"  press="saveNotes"/>
+								</form:content>
+							</form:SimpleForm>
 						</layout:content>
 					</layout:Grid>
 					<Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
@@ -291,9 +187,7 @@
 								</header>
 								<footer/>
 							</Column>
-								<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-
-							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"/>
 						</columns>
 						<items>
 							<ColumnListItem type="Active">
@@ -304,7 +198,6 @@
 									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
 									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
 									<Button width="100%" text="{i18n>addRow}" id="addRow" icon="sap-icon://add-contact"/>
-									
 								</cells>
 							</ColumnListItem>
 						</items>

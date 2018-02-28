@@ -12,7 +12,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				this.checkSelection();
 				debugger;
 			},
-			
+
 			checkSelection: function() {
 				if (this.byId("kunnr_m").getText() === "") {
 					this.byId("ActionListMain").setVisible(false);
@@ -24,12 +24,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 					this.byId("displayDeb").setVisible(true);
 					this.byId("labSelDeb").setVisible(false);
 					selectedCheck = true;
-				
+
 				}
 
 			},
 			selectDebitor: function() {
-				//////Hier kommt der Aufruf der Debitoren Auswahl, danach wird gecheckt ob einer selektiert wurde
+
 
 				var oView = this.getView();
 				var oDialog = oView.byId("searchDebDialog");
@@ -46,11 +46,23 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			closeSearchDialog: function() {
 				this.getView().byId("searchDebDialog").close();
 				sap.m.MessageToast.show("Es wurde kein Kunde ausgewählt");
+				var sTable = this.byId("smartTable_searchResults");
+				if (sTable.getEntitySet() === "Customer") {
+
+					this.initSearchResTable();
+				}
 			},
+<<<<<<< HEAD
+
+			testpress: function() {
+				sap.m.MessageToast("Bitte vorher einen Kunden auswählen");
+
+=======
 			
 			testpress: function(){
 			sap.m.MessageToast.show("Bitte vorher einen Kunden auswählen");
 			
+>>>>>>> branch 'EndersApp' of https://github.com/MarcPorath/EndersApp
 			},
 			toCreateOrder: function(oEvent) {
 				if (this.selectedCust === "") {
@@ -86,9 +98,22 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				this.selectedCust = this.getOwnerComponent().selectedCust;
 				this.byId("kunnr_m").setText(this.selectedCust.kunnr);
 				this.checkSelection();
-			
+
 				this.getView().byId("searchDebDialog").close();
 				if (selectedCheck === true) {
+<<<<<<< HEAD
+					this.byId("kunnr_m").setText(selectedCust.kunnr);
+					this.byId("name1_m").setText(selectedCust.name1);
+					this.byId("name2_m").setText(selectedCust.name2);
+					this.byId("tel01_m").setText(selectedCust.tel01);
+					this.byId("ort01_m").setText(selectedCust.ort01);
+					this.byId("plz01_m").setText(selectedCust.plz01);
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///////////////////////////////////////////////////////////////////////////////////////////
+					///AUSBAUEN SOBALD INFOSCREEN ANGEPASST!!!!!
+=======
 					this.byId("kunnr_m").setText(this.selectedCust.kunnr);
 					this.byId("name1_m").setText(this.selectedCust.name1);
 					this.byId("name2_m").setText(this.selectedCust.name2);
@@ -100,11 +125,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///AUSBAUEN SOBALD INFOSCREEN ANGEPASST!!!!!
+>>>>>>> branch 'EndersApp' of https://github.com/MarcPorath/EndersApp
 					window.selCustGlobal = selectedCust;
-///////////////////////////////////////////////////////////////////////////////////////////
-				
+					///////////////////////////////////////////////////////////////////////////////////////////
+					var sTable = this.byId("smartTable_searchResults");
+					if (sTable.getEntitySet() === "Customer") {
+
+						this.initSearchResTable();
+					}
 				}
-				
+
 			},
 			onItemPress: function(oEvent) {
 				debugger;
@@ -140,16 +170,24 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			},
 			// filter OData with Filter Array
 			_applyOnModel: function() {
-					this.getView().byId("table_deb").getBinding("items").filter([]);
-					if (filters.length > 0) {
-						this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
-					}
-				},
-				setEntityST: function() {
+				this.getView().byId("table_deb").getBinding("items").filter([]);
+				if (filters.length > 0) {
+					this.getView().byId("table_deb").getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
+				}
+			},
+			setEntityST: function() {
+				debugger;
+				var sTable = this.byId("smartTable_searchResults");
+				sTable.setEntitySet("Customer");
+
+			},
+			initSearchResTable: function() {
 					debugger;
 					var sTable = this.byId("smartTable_searchResults");
-					sTable.setEntitySet("Customer");
-					
+
+					sTable.setEntitySet("");
+					sTable.rebindTable();
+					sTable.setNoData();
 				}
 				// _readSpecificCustomer: function(){
 				// 	var aFilter = [];
