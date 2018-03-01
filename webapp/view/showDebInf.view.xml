@@ -10,7 +10,7 @@
 								columnsM="1">
 								<form:content>
 									<Label text="{i18n>kunnr}"/>
-									<Text text="{kunnr}" id="l_kunnr"/>
+									<Text text="" id="l_kunnr"/>
 									<Label text="{i18n>NAME1}"/>
 									<Text text="" id="l_name1"/>
 									<Label text="{i18n>NAME2}"/>
@@ -21,7 +21,9 @@
 									<Text text="" id="l_name4"/>
 									<Label text="{i18n>addr}"/>
 									<Text text="" id="l_stras"/>
+									<Label text="{i18n>plz01}"/>
 									<Text text="" id="l_plz01"/>
+										<Label text="{i18n>ort01}"/>
 									<Text text="" id="l_ort01"/>
 									<Label text="{i18n>phone}"/>
 									<Text text="" id="l_tel01"/>
