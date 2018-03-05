@@ -2,7 +2,7 @@
 	<App id="masterView">
 		<pages><Page title="{i18n>MainMenu}">
 
-				<Button text="SelectDeb" width="100%" id="selDeb" icon="sap-icon://search" type="Emphasized" press="selectDebitor"/>
+				<Button text="{i18n>selectDeb}" width="100%" id="selDeb" icon="sap-icon://search" type="Emphasized" press="selectDebitor"/>
 				<Label text="Bitte wählen Sie einen Kunden aus!" width="100%" id="labSelDeb" textAlign="Center"/>
 				<ObjectListItem id="displayDeb" title="Kundendaten">
 				    <attributes>
@@ -17,7 +17,7 @@
 				<List id="ActionListMain">
 				    <items>
 				        <ActionListItem type="Navigation" text="Auftrag erfassen" id="navToCreateOrder"  press="toCreateOrder"/>
-				        <ActionListItem type="Navigation" text="Aufträge anzeigen" id="navToDisplOrder" press="toShowOrder"/>
+				        <ActionListItem type="Navigation" text="Aufträge anzeigen" id="navToDisplOrder" press="toShowOrder" busy="true"/>
 				        <ActionListItem type="Navigation" text="Kundendaten" press="navToDeb"/>
 				        <ActionListItem type="Navigation" text="Einzelkonditionen" id="navToCond" visible="false"/>
 				        <ActionListItem type="Navigation" text="PIM Datenbank" id="navToPIM"	 visible="false" />
