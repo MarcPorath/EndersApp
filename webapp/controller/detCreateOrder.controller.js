@@ -106,7 +106,17 @@ sap.ui.define([
 			this.getOwnerComponent().setModel(oModel, "data");
 			
 			
-		}
+		},
+		matDetail: function(oEvent) {
+			debugger;
+		 					if (!this._oPopover) {
+		 			this._oPopover = sap.ui.xmlfragment("EndersApp.view.matDetailPop", this);
+		 			this.getView().addDependent(this._oPopover);
+
+		 		}
+
+		 		this._oPopover.openBy(oEvent.getSource());
+		 	}
 
 		// 	matDetail: function(oEvent) {
 		// 					if (!this._oPopover) {

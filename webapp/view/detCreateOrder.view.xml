@@ -32,12 +32,19 @@
 							</customData>
 							<Text text="Menge"/>
 						</Column>
+							<Column id="matInf" width="100px" hAlign="Begin">
+							<customData>
+								<core:CustomData key="p13nData" value='\{"columnKey": "MatInf", "maxLength": "5","columnIndex":"7"}'/>
+							</customData>
+							<Text text="Art.Info"/>
+						</Column>
 					</columns>
 					<items>
 						<ColumnListItem highlight="{path:'MATNR' , formatter:'.formatRowHighlight'}">
 							<cells>
 								<Input id="zprm1" name="Man. Preis" placeholder="{PRICE}" submit="setPrice"/>
 								<Input id="menge" name="Menge" placeholder="0"/>
+								 <Icon src="sap-icon://detail" size="30px" height="48px" width="48px" visible="true" press="matDetail"/>
 							</cells>
 						</ColumnListItem>
 					</items>
