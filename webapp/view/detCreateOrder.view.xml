@@ -32,6 +32,12 @@
 							</customData>
 							<Text text="Menge"/>
 						</Column>
+						<Column id="zson" width="100px" hAlign="Begin">
+							<customData>
+								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"6"}'/>
+							</customData>
+							<Text text="Menge"/>
+						</Column>						
 							<Column id="matInf" width="100px" hAlign="Begin">
 							<customData>
 								<core:CustomData key="p13nData" value='\{"columnKey": "MatInf", "maxLength": "5","columnIndex":"7"}'/>
@@ -44,7 +50,7 @@
 							<cells>
 								<Input id="zprm1" name="Man. Preis" placeholder="{PRICE}" submit="setPrice"/>
 								<Input id="menge" name="Menge" placeholder="0"/>
-								 <Icon src="sap-icon://detail" size="30px" height="48px" width="48px" visible="true" press="matDetail"/>
+								<core:Icon src="sap-icon://detail-view" size="30px" height="48px" width="48px" visible="true" press="matDetail"/>
 							</cells>
 						</ColumnListItem>
 					</items>

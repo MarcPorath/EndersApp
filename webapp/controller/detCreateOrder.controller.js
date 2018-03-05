@@ -108,7 +108,7 @@ sap.ui.define([
 			
 		},
 		matDetail: function(oEvent) {
-			debugger;
+			oEvent.getSource().getBindingContext(); 
 		 					if (!this._oPopover) {
 		 			this._oPopover = sap.ui.xmlfragment("EndersApp.view.matDetailPop", this);
 		 			this.getView().addDependent(this._oPopover);
