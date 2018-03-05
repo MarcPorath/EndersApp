@@ -4,14 +4,20 @@
 	"__metadata": {
 		"uri": "Order(vbeln=1205478)",
 		"type": "Enders.Order"
-	}
-},
-{
+	},
+	"bestn": "Bestellnummer 1",
+	"bestd": "09.01.2018",
+	"volum": "100",
+	"kunnr": "1022581"
+}, {
 	"vbeln": "1205479",
 	"angel": "13.01.2018",
 	"__metadata": {
 		"uri": "Order(vbeln=1205479)",
 		"type": "Enders.Order"
-	}
-}
-]
+	},
+	"bestn": "Bestellnummer 2",
+	"bestd": "30.12.2017",
+	"volum": "3000",
+	"kunnr": "1040796"
+}]

@@ -17,7 +17,7 @@
 				<List id="ActionListMain">
 				    <items>
 				        <ActionListItem type="Navigation" text="Auftrag erfassen" id="navToCreateOrder"  press="toCreateOrder"/>
-				        <ActionListItem type="Navigation" text="Aufträge anzeigen" id="navToDisplOrder" press="toShowOrder" busy="true"/>
+				        <ActionListItem type="Navigation" text="Aufträge anzeigen" id="navToDisplOrder" press="toShowOrder"/>
 				        <ActionListItem type="Navigation" text="Kundendaten" press="navToDeb"/>
 				        <ActionListItem type="Navigation" text="Einzelkonditionen" id="navToCond" visible="false"/>
 				        <ActionListItem type="Navigation" text="PIM Datenbank" id="navToPIM"	 visible="false" />

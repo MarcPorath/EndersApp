@@ -86,8 +86,16 @@
 				</Key>
 				<Property MaxLength="10" Name="vbeln" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Vertriebsbelegr" sap:sortable="true" sap:updatable="false"/>
-				<Property MaxLength="10" Name="angel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Name 1"
+				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Kundenummer" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="angel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Angelegt am"
 					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="bestn" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Bestellnummer"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="bestd" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Bestelldatum"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="volum" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Auftragsvolumen"
+					sap:sortable="true" sap:updatable="false"/>					
 			</EntityType>
 			<EntityContainer m:IsDefaultEntityContainer="true" sap:supported-formats="atom json">
 				<EntitySet Name="Basket" EntityType="Enders.Basket"/>
@@ -139,6 +147,27 @@
 					</Collection>
 				</Annotation>
 			</Annotations>
+-			<Annotations Target="Enders.Order" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="vbeln"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="bestn"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="angel"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="bestd"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="volum"/>
+						</Record>						
+					</Collection>
+				</Annotation>
+			</Annotations>			
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

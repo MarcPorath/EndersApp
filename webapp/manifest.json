@@ -190,14 +190,13 @@
 				}
 			},
 			"": {
-				"type" : "sap.ui.model.odata.v2.ODataModel",
+				"type": "sap.ui.model.odata.v2.ODataModel",
 				"dataSource": "Enders",
 				"settings": {
 					"defaultBindingMode": "TwoWay"
 				},
 				"preload": true
 			}
-
 		},
 		"resources": {
 			"css": [
@@ -206,5 +205,9 @@
 				}
 			]
 		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/enders/ad_app/webapp",
+		"_version": "1.1.0"
 	}
 }

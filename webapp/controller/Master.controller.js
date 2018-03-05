@@ -72,7 +72,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 			},
 
 			toShowOrder: function(oEvent) {
-
+				
+					var oMainView = sap.ui.getCore().byId("__xmlview0");
+					var oSplitContainer = oMainView.byId("mainView");
+					oSplitContainer.setMode(sap.m.SplitAppMode.StretchCompressMode);
+					if (oSplitContainer.isMasterShown()) {
+						oSplitContainer.setMode(sap.m.SplitAppMode.HideMode);
+					}
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("showOrderSelect");
 			},
