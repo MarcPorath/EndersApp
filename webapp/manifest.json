@@ -69,16 +69,14 @@
 				"async": true,
 				"controlId": "mainView"
 			},
-			"routes": [
-				{
+			"routes": [{
 					"pattern": "Master",
 					"name": "Master",
 					"target": [
 						"mainDetail",
 						"Master"
 					]
-				},
-				{
+				}, {
 					"pattern": "Master/mainDetail",
 					"name": "mainDetail",
 					"greedy": false,
@@ -86,17 +84,25 @@
 						"Master",
 						"mainDetail"
 					]
-				},
-				{
+				}, {
 					"pattern": "Master/detCreateOrder",
 					"name": "detCreateOrder",
 					"greedy": false,
 					"target": [
 						"Master",
 						"detCreateOrder"
+
 					]
-				},
-				{
+
+				}, {
+					"pattern": "Master/detCreateOrder/matDetail",
+					"name": "matDetail",
+					"greedy": false,
+					"target": [
+						"detCreateOrder",
+						"matDetail"
+					]
+				}, {
 					"pattern": "",
 					"name": "default",
 					"greedy": false,
@@ -104,8 +110,7 @@
 						"mainDetail",
 						"Master"
 					]
-				},
-				{
+				}, {
 					"pattern": "Master/showOrderSelect/Detail",
 					"name": "showOrderDetail",
 					"greedy": false,
@@ -114,6 +119,7 @@
 						"showOrderDetail"
 					]
 				},
+
 				{
 					"pattern": "Master/showOrderSelect",
 					"name": "showOrderSelect",
@@ -122,8 +128,7 @@
 						"Master",
 						"showOrderSelect"
 					]
-				},
-				{
+				}, {
 					"pattern": "Master/showDebInf",
 					"name": "showDebInf",
 					"greedy": false,
@@ -153,6 +158,13 @@
 					"viewName": "detCreateOrder",
 					"viewId": "detCreateOrder",
 					"viewLevel": 2,
+					"transition": "slide"
+				},
+				"matDetail": {
+					"controlAggregation": "detailPages",
+					"viewName": "matDetail",
+					"viewId": "matDetail",
+					"viewLevel": 3,
 					"transition": "slide"
 				},
 				"showOrderSelect": {
@@ -199,11 +211,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		}
 	},
 	"sap.platform.abap": {
