@@ -2,77 +2,103 @@
 	xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m"
 	controllerName="EndersApp.controller.matDetail" height="100%">
 	<m:App id="matDetail">
-	<m:Page title="Artikelinfo" showNavButton="true" navButtonPress="goBack">
-		<m:VBox fitContainer="true">
-			<smartForm:SmartForm id="smartformMatInfo" title="{i18n>matInf}">
-				<smartForm:Group >
-					<smartForm:GroupElement label="{i18n>matnr}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>maktx}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>grText}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>meins}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>ufaktor}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>zzgebinde}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>mtpos}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>abgmen}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-				</smartForm:Group>
-			</smartForm:SmartForm>
-			<smartForm:SmartForm title="{i18n>saleInf}">
-				<smartForm:Group>
-					<smartForm:GroupElement label="{i18n>lastVk}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>totalVk}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>lastOrder}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>zakt}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>zaktInt}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>vk}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>ek}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>margin}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>newVkSug}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-					<smartForm:GroupElement label="{i18n>newVkSugDate}">
-						<smartField:SmartField value="{Name}"/>
-					</smartForm:GroupElement>
-				</smartForm:Group>
-			</smartForm:SmartForm>
-		</m:VBox>
-		<m:footer>
-			<m:OverflowToolbar id="otbFooter">
-				<m:ToolbarSpacer/>
-				<m:Button type="Reject" text="Zurück" press="goBackAndReject"/>
-			</m:OverflowToolbar>
-		</m:footer>
-	</m:Page>
+		<m:Page title="Artikelinfo" showNavButton="true" navButtonPress="goBack">
+			<m:VBox fitContainer="true">
+				<smartForm:SmartForm id="smartForm">
+					<smartForm:Group label="{i18n>matInf}">
+						<smartForm:GroupElement label="{i18n>matnr}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>maktx}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>grText}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>meins}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>ufaktor}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>zzgebinde}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>mtpos}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>abgmen}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+					</smartForm:Group>
+					<smartForm:Group label="{i18n>saleInf}">
+						<smartForm:GroupElement label="{i18n>lastVk}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>totalVk}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>lastOrder}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>zakt}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>zaktInt}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>vk}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>ek}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>margin}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>newVkSug}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>newVkSugDate}">
+							<smartField:SmartField value="{Name}"/>
+						</smartForm:GroupElement>
+					</smartForm:Group>
+										<smartForm:Group label="{i18n>activitys}">
+						<smartForm:GroupElement>
+							<m:Button text="{i18n>deleteFromBasket}" width="100%"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement>
+							<m:Button text="{i18n>lockForDeb}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement>
+							<m:Button text="{i18n>toFavorit}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement>
+							<m:Button text="{i18n>toLMIV}"/>
+						</smartForm:GroupElement>
+					</smartForm:Group>
+					<smartForm:Group label="{i18n>stock}">
+						<smartForm:GroupElement label="{i18n>avStatus}">
+							<smartField:SmartField value="{i18n>avStatus}"/>
+						</smartForm:GroupElement>
+						<smartForm:GroupElement label="{i18n>quantity}">
+							<smartField:SmartField value="{i18n>quantity}"/>
+						</smartForm:GroupElement>
+					</smartForm:Group>
+
+					<smartForm:Group label="{i18n>picture}">
+						<smartForm:GroupElement>
+							<m:Image src="8569-Kein_Foto_vorhanden.jpg"/>
+						</smartForm:GroupElement>
+					</smartForm:Group>
+				</smartForm:SmartForm>
+			</m:VBox>
+			<m:footer>
+				<m:OverflowToolbar id="otbFooter">
+					<m:ToolbarSpacer/>
+					<m:Button type="Reject" text="Zurück" press="goBack"/>
+				</m:OverflowToolbar>
+			</m:footer>
+		</m:Page>
 	</m:App>
 </mvc:View>
