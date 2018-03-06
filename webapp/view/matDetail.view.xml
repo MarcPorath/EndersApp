@@ -2,7 +2,7 @@
 	xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m"
 	controllerName="EndersApp.controller.matDetail" height="100%">
 	<m:App id="matDetail">
-	<m:Page title="Artikelinfo" showNavButton="true" navButtonPress="back">
+	<m:Page title="Artikelinfo" showNavButton="true" navButtonPress="goBack">
 		<m:VBox fitContainer="true">
 			<smartForm:SmartForm id="smartformMatInfo" title="{i18n>matInf}">
 				<smartForm:Group >
