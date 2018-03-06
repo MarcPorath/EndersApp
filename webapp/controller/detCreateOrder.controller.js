@@ -108,15 +108,9 @@ sap.ui.define([
 			
 		},
 		matDetail: function(oEvent) {
-			oEvent.getSource().getBindingContext(); 
-		 					if (!this._oPopover) {
-		 			this._oPopover = sap.ui.xmlfragment("EndersApp.view.matDetailPop", this);
-		 			this.getView().addDependent(this._oPopover);
-
-		 		}
-
-		 		this._oPopover.openBy(oEvent.getSource());
-		 	}
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+							oRouter.navTo("matDetail");
+		}
 
 		// 	matDetail: function(oEvent) {
 		// 					if (!this._oPopover) {

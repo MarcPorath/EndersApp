@@ -1,7 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m"
-	controllerName="EndersApp.controller.detCreateOrder" height="100%">
-	<m:Page title="Warenkorb" showNavButton="true" navButtonPress="goBackAndReject">
+	controllerName="EndersApp.controller.showOrderSelect" height="100%">
+	<m:Page title="Aufträge" showNavButton="true" navButtonPress="goBackAndReject">
 		<m:VBox fitContainer="true">
 			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Order" persistencyKey="SmartFilterPKey">
 				<smartFilterBar:controlConfiguration>

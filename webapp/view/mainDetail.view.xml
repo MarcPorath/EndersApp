@@ -3,7 +3,7 @@
 		<pages>
 			<Page title="">
 				<HBox width="100%" id="hdBoxBeg" justifyContent="Center" direction="Column" alignItems="Center">
-					<Image src="/webapp/resources/ENDERS_PNG.png" width="900px" height="30%" id="endImage" alt="Enders"/>
+					<Image src="/webapp/ENDERS_PNG.png" width="900px" height="30%" id="endImage" alt="Enders"/>
 				</HBox>
 			<content/>
 			</Page>
