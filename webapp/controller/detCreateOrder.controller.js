@@ -53,6 +53,7 @@ sap.ui.define([
 			}
 		},
 		onMengChange: function (oEvent) {
+			var i = 0;
 			var entry = oEvent.getSource().getBindingContext().getObject();
 			entry.meng = oEvent.getParameters().newValue;
 			
@@ -65,11 +66,13 @@ sap.ui.define([
 						} else {
 							filled.splice(s, 1, entry);
 						}
-					}
+						i = 1;
+					} 
 				}
-			} else {
-				filled.push(entry);
-			}			
+			}
+			if (i < 1) {
+					filled.push(entry);
+				}
 		},
 		/*		onAfterRendering: function() {
 					this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
