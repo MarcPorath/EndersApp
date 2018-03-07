@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<P13nDialog showReset="true" ok="onOK" cancel="onCancel" reset="onReset" class="sapUiSizeCompact">
+		<panels>
+			<P13nColumnsPanel changeColumnsItems="onChangeColumnsItems" items="{path: '/Basket'}" columnsItems="{path: '/Basket'}">
+				<items>
+					<P13nItem columnKey="{MATNR}" text="{MATNR}"/>
+				</items>
+				<columnsItems>
+					<P13nColumnsItem columnKey="{MATNR}"/>
+				</columnsItems>
+			</P13nColumnsPanel>
+			<P13nSortPanel containerQuery="true" addSortItem="onAddSortItem" removeSortItem="onRemoveSortItem" items="{path: '/Basket'}"
+				sortItems="{path: '/Basket'}">
+				<P13nItem columnKey="{MATNR}" text="{MATNR}"/>
+				<sortItems>
+					<P13nSortItem columnKey="{MATNR}" operation="{MATNR}"/>
+				</sortItems>
+			</P13nSortPanel>
+			<P13nFilterPanel>
+				<items>
+					<P13nItem columnKey="{MATNR}" text="{MATNR}"/>
+				</items><!-- sap.m.P13nItem -->
+				<filterItems>
+					<P13nFilterItem columnKey="{MATNR}"/>
+				</filterItems><!-- sap.m.P13nFilterItem -->
+			</P13nFilterPanel>
+		</panels>
+	</P13nDialog>
+</core:FragmentDefinition>

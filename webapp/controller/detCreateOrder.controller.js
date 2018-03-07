@@ -6,45 +6,79 @@ sap.ui.define([
 
 	var selectedCust;
 	var _oRouter;
+	var hide = false;
 
 	return Controller.extend("EndersApp.controller.detCreateOrder", {
 
 		onInit: function() {
 			this.selectedCust = this.getOwnerComponent().selectedCust;
 		},
-		onAfterRendering: function() {
-			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
-		},
-		handleRouteMatched: function(evt) {
-			//Check whether is the detail page is matched.
+		onPersoPress: function() {
+			var oPersonalizationDialog = sap.ui.xmlfragment("EndersApp.view.orderPersonalizationDialog", this);
+			//this.oJSONModel.setProperty("/ShowResetEnabled", this._isChangedSortItems() || this._isChangedColumnsItems());
+			var oModel = this.getOwnerComponent().getModel();
+			oPersonalizationDialog.setModel(oModel);
 
-			if (evt.getParameter("name") === "detCreateOrder") {
-				var filters = [];
-				var s = this.getView().byId("warenkorbTable");
-				try {
+			this.getView().addDependent(oPersonalizationDialog);
+			oPersonalizationDialog.open();
+		},
+		onOK: function(oEvent) {
+			this.oDataBeforeOpen = {};
+			oEvent.getSource().close();
+		},
+
+		onCancel: function(oEvent) {
+			this.oDataBeforeOpen = {};
+			oEvent.getSource().close();
+		},
+
+		onReset: function() {
+			this.oJSONModel.setProperty("/", jQuery.extend(true, [], this.oDataInitial));
+		},		
+		onHide: function(oEvent) {
+			if (hide === false){
+				oEvent.getSource().setIcon("sap-icon://show");
+				oEvent.getSource().setTooltip("Gesamten Warenkorb einblenden");
+				hide = true;
+			} else {
+				oEvent.getSource().setIcon("sap-icon://hide");
+				oEvent.getSource().setTooltip("Nur gefüllte Positionen anzeigen");
+				hide = false;
+			}
+		},
+		/*		onAfterRendering: function() {
+					this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+					this._oRouter.attachRouteMatched(this.handleRouteMatched, this);
+				},
+				handleRouteMatched: function(evt) {
+					//Check whether is the detail page is matched.
+
+					if (evt.getParameter("name") === "detCreateOrder") {
+						var filters = [];
+						var s = this.getView().byId("warenkorbTable");
+						try {
+							filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
+							s.getTable().getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
+						} catch (err) {
+							// do nothing
+						}
+					}
+
+				},
+
+				formatRowHighlight: function(oValue) {
+					if (oValue.substring(0, 2) === "11") {
+						return "Success";
+					} else if (oValue.substring(0, 2) === "12") {
+						return "Warning";
+					}
+				},
+
+				onTableRebind: function(oControlEvent) {
+					var filters = [];
 					filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
-					s.getTable().getBinding("items").filter(filters, sap.ui.model.FilterType.Application);
-				} catch (err) {
-					// do nothing
-				}
-			}
-
-		},
-
-		formatRowHighlight: function(oValue) {
-			if (oValue.substring(0, 2) === "11") {
-				return "Success";
-			} else if (oValue.substring(0, 2) === "12") {
-				return "Warning";
-			}
-		},
-
-		onTableRebind: function(oControlEvent) {
-			var filters = [];
-			filters.push(new sap.ui.model.Filter("KUNNR", sap.ui.model.FilterOperator.Contains, this.getOwnerComponent().selectedCust.kunnr));
-			oControlEvent.getParameters().bindingParams.filter = filters;
-		},
+					oControlEvent.getParameters().bindingParams.filter = filters;
+				},*/
 
 		// 	avCheck: function() {
 		// 		sap.m.MessageToast.show("XX St verfügbar zum Wunschlieferdatum!");
@@ -99,18 +133,18 @@ sap.ui.define([
 		setPrice: function(oEvent) {
 			var oModel = new sap.ui.model.json.JSONModel();
 			debugger;
-			this.getOwnerComponent().getModel().read(oEvent.getSource().getBindingContext().getPath(), null, null, false, function(oData, oResponse){
+			this.getOwnerComponent().getModel().read(oEvent.getSource().getBindingContext().getPath(), null, null, false, function(oData,
+				oResponse) {
 				oModel.setData(oData);
 			}, null);
-			
+
 			this.getOwnerComponent().setModel(oModel, "data");
-			
-			
+
 		},
 		matDetail: function(oEvent) {
 			debugger;
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-							oRouter.navTo("matDetail");
+			oRouter.navTo("matDetail");
 		}
 
 		// 	matDetail: function(oEvent) {

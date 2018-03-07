@@ -1,69 +1,117 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m"
-	controllerName="EndersApp.controller.detCreateOrder" height="100%">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:fb="sap.ui.comp.filterbar" xmlns:unified="sap.ui.unified"
+	xmlns:m="sap.m" xmlns:f="sap.f" xmlns:v="sap.ui.comp.variants" xmlns:l="sap.ui.layout" controllerName="EndersApp.controller.detCreateOrder"
+	height="100%">
 	<m:Page title="Warenkorb" showNavButton="true" navButtonPress="goBackAndReject">
-		<m:VBox fitContainer="true">
-			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Basket" persistencyKey="SmartFilterPKey">
-				<smartFilterBar:controlConfiguration>
-					<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
-					<smartFilterBar:ControlConfiguration key="KUNNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
-				</smartFilterBar:controlConfiguration>
-			</smartFilterBar:SmartFilterBar>
-			<smartTable:SmartTable id="warenkorbTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false" entitySet="Basket"
-				useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Basket" showRowCount="true"
-				useExportToExcel="false" enableAutoBinding="true" beforeRebindTable="onTableRebind">
-				<smartTable:customToolbar>
-					<OverflowToolbar design="Transparent">
-						<ToolbarSpacer/>
-						<Button icon="sap-icon://add" text="Erweitern" press="addRow"/>
-					</OverflowToolbar>
-				</smartTable:customToolbar>
-				<Table mode="SingleSelectMaster" growing="true" id="table">
-					<columns>
-						<Column id="zprm" width="100px" hAlign="Begin">
-							<customData>
-								<core:CustomData key="p13nData" value='\{"columnKey": "Man. Preis", "maxLength": "5","columnIndex":"5"}'/>
-							</customData>
-							<Text text="Man. Preis"/>
-						</Column>
-						<Column id="meng" width="100px" hAlign="Begin">
-							<customData>
-								<core:CustomData key="p13nData" value='\{"columnKey": "Menge", "maxLength": "5","columnIndex":"6"}'/>
-							</customData>
-							<Text text="Menge"/>
-						</Column>
-						<Column id="zson" width="100px" hAlign="Begin">
-							<customData>
-								<core:CustomData key="p13nData" value='\{"columnKey": "ZSON", "maxLength": "5","columnIndex":"7"}'/>
-							</customData>
-							<Text text="Sonderrabatt"/>
-						</Column>						
-							<Column id="matInf" width="100px" hAlign="Begin">
-							<customData>
-								<core:CustomData key="p13nData" value='\{"columnKey": "MatInf", "maxLength": "5","columnIndex":"8"}'/>
-							</customData>
-							<Text text="Art.Info"/>
-						</Column>
-					</columns>
-					<items>
-						<ColumnListItem highlight="{path:'MATNR' , formatter:'.formatRowHighlight'}">
-							<cells>
-								<Input id="zprm1" name="Man. Preis" placeholder="{PRICE}" submit="setPrice"/>
-								<Input id="menge" name="Menge" placeholder="0"/>
-								<Input id="zson1" name="Sonderrab."/>
-								<core:Icon src="sap-icon://detail-view" size="30px" height="48px" width="48px" visible="true" press="matDetail"/>
-							</cells>
-						</ColumnListItem>
-					</items>
-				</Table>
-			</smartTable:SmartTable>
-			</m:VBox>
-			<footer>
-				<OverflowToolbar id="otbFooter">
-					<ToolbarSpacer/>
-					<Button type="Accept" text="Auftrag anlegen" press="confirmSave" />
-					<Button type="Reject" text="Zurück" press="goBackAndReject" />
-				</OverflowToolbar>
-			</footer>
+		<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true" persistencyKey="123">
+			<fb:filterItems>
+				<fb:FilterItem name="A" label="Artikelnummer">
+					<fb:control>
+						<m:Input type="Text" showValueHelp="true"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="B" label="Warengruppe">
+					<fb:control>
+						<m:Input type="Text" showValueHelp="true"/>
+					</fb:control>
+				</fb:FilterItem>
+				<fb:FilterItem name="C" label="Artikeltext">
+					<fb:control>
+						<m:Input type="Text" showValueHelp="true"/>
+					</fb:control>
+				</fb:FilterItem>
+			</fb:filterItems>
+			<!--			<fb:filterGroupItems>
+				<fb:FilterGroupItem groupName="G2" groupTitle="Weitere Filter" name="A" label="Company">
+					<fb:control>
+						<Input type="Text"/>
+					</fb:control>
+				</fb:FilterGroupItem>
+				<fb:FilterGroupItem groupName="G2" groupTitle="Weitere Filter" name="B" label="Customer">
+					<fb:control>
+						<Input type="Text"/>
+					</fb:control>
+				</fb:FilterGroupItem>
+				<fb:FilterGroupItem groupName="G2" groupTitle="Weitere Filter" name="C" label="Supplier">
+					<fb:control>
+						<Input type="Text"/>
+					</fb:control>
+				</fb:FilterGroupItem>
+				<fb:FilterGroupItem groupName="G2" groupTitle="Weitere Filter" name="D" label="Category">
+					<fb:control>
+						<Input type="Text"/>
+					</fb:control>
+				</fb:FilterGroupItem>
+			</fb:filterGroupItems>-->
+		</fb:FilterBar>
+		<m:Table id="productsTable" items="{/Basket}" growing="true" growingThreshold="50" growingTriggerText="lädt.." growingScrollToLoad="true"
+			growingDirection="Downwards">
+			<m:headerToolbar>
+				<m:OverflowToolbar>
+					<v:VariantManagement id="vm_table" select="onSelect" save="onSave" enabled="true" manage="onManage" showExecuteOnSelection="true"
+						showShare="false">
+						<v:variantItems>
+							<v:VariantItem text="Test" key="Test"></v:VariantItem>
+						</v:variantItems>
+					</v:VariantManagement>
+					<m:ToolbarSpacer/>
+					<!-- Add the Personalization button -->
+					<m:Button icon="sap-icon://hide" press="onHide" tooltip="Nur gefüllte Positionen anzeigen" />
+					<m:Button icon="sap-icon://add" press="add"/>
+					<m:Button icon="sap-icon://action-settings" press="onPersoPress"/>
+					<!--<m:layoutData>-->
+					<!--	<m:OverflowToolbarLayoutData/>-->
+					<!--</m:layoutData>-->
+					<!--</m:Button>-->
+				</m:OverflowToolbar>
+			</m:headerToolbar>
+			<!--			<m:headerToolbar>
+				<m:OverflowToolbar>
+					<m:Title text="Products" level="H2"/>
+					<m:ToolbarSpacer/>
+					<m:CheckBox text="Enable Personalization Grouping" select="onTableGrouping"/>
+					<m:Button icon="sap-icon://action-settings" press="onPersoButtonPressed">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData priority="NeverOverflow" />
+						</m:layoutData>
+					</m:Button>
+				</m:OverflowToolbar>
+			</m:headerToolbar>-->
+			<m:columns>
+				<m:Column id="productCol" width="auto"><m:Text text="Materialnummer"/></m:Column>
+				<m:Column id="textCol" minScreenWidth="Tablet" width="auto" demandPopin="true"><m:Text text="Text"/></m:Column>
+				<m:Column id="priceCol" minScreenWidth="Tablet" width="auto" demandPopin="true" hAlign="End"><m:Text text="Preis"/></m:Column>
+				<m:Column id="prherkCol" minScreenWidth="Tablet" width="auto" demandPopin="true" hAlign="Center"><m:Text text="Preisherkunft"/></m:Column>
+				<m:Column id="zdarCol" width="auto" hAlign="End"><m:Text text="Dauerrabatt"/></m:Column>
+			</m:columns>
+			<m:items>
+				<m:ColumnListItem>
+					<m:cells>
+						<m:ObjectIdentifier id="product" text="{MATNR}" class="sapMTableContentMargin"/>
+						<l:VerticalLayout id="text">
+							<m:Text text="{MAKTX}"/>
+							<m:Text text="{GRTXT}"/>
+						</l:VerticalLayout>
+						<m:Text id="preis" text="{PRICE}"/>
+						<m:Text id="prherk" text="{PRHERK}"/>
+						<m:Text id="zdar" text="{ZDAR}"/>
+						<!--						<m:Text text="{SupplierName}"/>
+						<m:Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+						<m:ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"
+							state="{ path: 'WeightMeasure', formatter: 'sap.m.sample.TablePerso.Formatter.weightState' }"/>
+						<m:ObjectNumber
+							number="{ parts:[{path:'Price'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+							unit="{CurrencyCode}"/>-->
+					</m:cells>
+				</m:ColumnListItem>
+			</m:items>
+		</m:Table>
+		<m:footer>
+			<m:OverflowToolbar id="otbFooter">
+				<m:ToolbarSpacer/>
+				<m:Button type="Accept" text="Auftrag anlegen" press="confirmSave"/>
+				<m:Button type="Reject" text="Zurück" press="goBackAndReject"/>
+			</m:OverflowToolbar>
+		</m:footer>
 	</m:Page>
 </mvc:View>
