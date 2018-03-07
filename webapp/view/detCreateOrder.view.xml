@@ -83,6 +83,7 @@
 				<m:Column id="priceCol" minScreenWidth="Tablet" width="auto" demandPopin="true" hAlign="End"><m:Text text="Preis"/></m:Column>
 				<m:Column id="prherkCol" minScreenWidth="Tablet" width="auto" demandPopin="true" hAlign="Center"><m:Text text="Preisherkunft"/></m:Column>
 				<m:Column id="zdarCol" width="auto" hAlign="End"><m:Text text="Dauerrabatt"/></m:Column>
+				<m:Column id="mengCol" width="auto" hAlign="End"><m:Text text="Menge"/></m:Column>
 			</m:columns>
 			<m:items>
 				<m:ColumnListItem>
@@ -95,6 +96,7 @@
 						<m:Text id="preis" text="{PRICE}"/>
 						<m:Text id="prherk" text="{PRHERK}"/>
 						<m:Text id="zdar" text="{ZDAR}"/>
+						<m:Input id="meng" liveChange="onMengChange" />
 						<!--						<m:Text text="{SupplierName}"/>
 						<m:Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
 						<m:ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"

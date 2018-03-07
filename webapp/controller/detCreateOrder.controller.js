@@ -6,6 +6,7 @@ sap.ui.define([
 
 	var selectedCust;
 	var _oRouter;
+	var filled = [];
 	var hide = false;
 
 	return Controller.extend("EndersApp.controller.detCreateOrder", {
@@ -36,15 +37,39 @@ sap.ui.define([
 			this.oJSONModel.setProperty("/", jQuery.extend(true, [], this.oDataInitial));
 		},		
 		onHide: function(oEvent) {
+			
 			if (hide === false){
 				oEvent.getSource().setIcon("sap-icon://show");
 				oEvent.getSource().setTooltip("Gesamten Warenkorb einblenden");
+				// Filterfunktion
 				hide = true;
 			} else {
 				oEvent.getSource().setIcon("sap-icon://hide");
 				oEvent.getSource().setTooltip("Nur gefüllte Positionen anzeigen");
+				oEvent.getSource().getParent().getParent().getBinding("items").sFilterParams = null;
+				oEvent.getSource().getParent().getParent().getBinding("items").aApplicationFilters = [];
+				oEvent.getSource().getParent().getParent().getModel().refresh();
 				hide = false;
 			}
+		},
+		onMengChange: function (oEvent) {
+			var entry = oEvent.getSource().getBindingContext().getObject();
+			entry.meng = oEvent.getParameters().newValue;
+			
+			
+			if (filled.length > 0) {
+				for (var s in filled) {
+					if (filled[s].MATNR === entry.MATNR) {
+						if (entry.meng === 0) {
+							filled.splice(s, 1);
+						} else {
+							filled.splice(s, 1, entry);
+						}
+					}
+				}
+			} else {
+				filled.push(entry);
+			}			
 		},
 		/*		onAfterRendering: function() {
 					this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
