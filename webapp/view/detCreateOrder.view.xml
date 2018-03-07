@@ -48,12 +48,12 @@
 			growingDirection="Downwards">
 			<m:headerToolbar>
 				<m:OverflowToolbar>
-					<v:VariantManagement id="vm_table" select="onSelect" save="onSave" enabled="true" manage="onManage" showExecuteOnSelection="true"
+<!--					<v:VariantManagement id="vm_table" select="onSelect" save="onSave" enabled="true" manage="onManage" showExecuteOnSelection="true"
 						showShare="false">
 						<v:variantItems>
 							<v:VariantItem text="Test" key="Test"></v:VariantItem>
 						</v:variantItems>
-					</v:VariantManagement>
+					</v:VariantManagement>-->
 					<m:ToolbarSpacer/>
 					<!-- Add the Personalization button -->
 					<m:Button icon="sap-icon://hide" press="onHide" tooltip="Nur gefüllte Positionen anzeigen" />
