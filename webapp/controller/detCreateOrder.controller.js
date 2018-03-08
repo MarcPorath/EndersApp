@@ -6,12 +6,13 @@ sap.ui.define([
 
 	var selectedCust;
 	var _oRouter;
-	var filled = [];
+	var filled;
 	var hide = false;
 
 	return Controller.extend("EndersApp.controller.detCreateOrder", {
 
 		onInit: function() {
+			this.filled = [];
 			this.selectedCust = this.getOwnerComponent().selectedCust;
 		},
 		onPersoPress: function() {
@@ -32,47 +33,96 @@ sap.ui.define([
 			this.oDataBeforeOpen = {};
 			oEvent.getSource().close();
 		},
-
 		onReset: function() {
 			this.oJSONModel.setProperty("/", jQuery.extend(true, [], this.oDataInitial));
-		},		
-		onHide: function(oEvent) {
+		},
+		onClear: function(oEvent) {
+			var oTable = this.getView().byId("productsTable");
+			var oItems = oTable.getItems();			
+			for (var s in oItems) {
+				var key = oTable.getItems()[s].getBindingContext().sPath;
+				for (var t in this.filled) {
+					if (this.filled[t].__metadata.id === key ){
+						for ( var j in oTable.getItems()[s].getCells()){
+							if (oTable.getItems()[s].getCells()[j].getId().substring(31,35) === "meng"){
+								oTable.getItems()[s].getCells()[j].setValue("");
+							}
+						}
+					}
+				}
+			}
+			this.filled = [];
+			oEvent.getSource().getParent().getParent().getModel().refresh(true); 
+		},
+		onChanged: function() {
+			// Fill meng values if empty
+			var oTable = this.getView().byId("productsTable");
+			var oItems = oTable.getItems();
+			if ( this.filled.length > 0 ) {
+			for (var s in oItems) {
+				var key = oTable.getItems()[s].getBindingContext().sPath;
+				for (var t in this.filled) {
+					if (this.filled[t].__metadata.id === key ){
+						for ( var j in oTable.getItems()[s].getCells()){
+							if (oTable.getItems()[s].getCells()[j].getId().substring(31,35) === "meng"){
+								oTable.getItems()[s].getCells()[j].setValue(this.filled[t].meng);
+							}
+						}
+					}
+				}
+			}}
 			
-			if (hide === false){
-				oEvent.getSource().setIcon("sap-icon://show");
-				oEvent.getSource().setTooltip("Gesamten Warenkorb einblenden");
-				// Filterfunktion
-				hide = true;
-			} else {
-				oEvent.getSource().setIcon("sap-icon://hide");
-				oEvent.getSource().setTooltip("Nur gefüllte Positionen anzeigen");
-				oEvent.getSource().getParent().getParent().getBinding("items").sFilterParams = null;
-				oEvent.getSource().getParent().getParent().getBinding("items").aApplicationFilters = [];
-				oEvent.getSource().getParent().getParent().getModel().refresh();
-				hide = false;
+		},
+		onHide: function(oEvent) {
+			var filters = [];
+			var oTable = oEvent.getSource().getParent().getParent();
+			var item = oTable.getItems()[0];
+			var oItemTemplate = item.clone();
+			if (this.filled.length > 0) {
+				if (hide === false) {
+					oEvent.getSource().setIcon("sap-icon://show");
+					oEvent.getSource().setTooltip("Gesamten Warenkorb einblenden");
+					for (var s in this.filled) {
+						filters.push(new sap.ui.model.Filter("MATNR", sap.ui.model.FilterOperator.Contains, this.filled[s].MATNR));
+					}
+					oTable.unbindAggregation("items");
+					oTable.bindAggregation("items", {
+						path: "/Basket",
+						template: oItemTemplate,
+						filters: filters
+					});
+					// Filterfunktion
+					hide = true;
+				} else {
+					oEvent.getSource().setIcon("sap-icon://hide");
+					oEvent.getSource().setTooltip("Nur gefüllte Positionen anzeigen");
+					oTable.getBinding("items").sFilterParams = null;
+					oTable.getBinding("items").aApplicationFilters = [];
+					oTable.getModel().refresh();
+					hide = false;
+				}
 			}
 		},
-		onMengChange: function (oEvent) {
+		onMengChange: function(oEvent) {
 			var i = 0;
 			var entry = oEvent.getSource().getBindingContext().getObject();
 			entry.meng = oEvent.getParameters().newValue;
-			
-			
-			if (filled.length > 0) {
-				for (var s in filled) {
-					if (filled[s].MATNR === entry.MATNR) {
-						if (entry.meng === 0) {
-							filled.splice(s, 1);
+
+			if (this.filled.length > 0) {
+				for (var s in this.filled) {
+					if (this.filled[s].MATNR === entry.MATNR) {
+						if (entry.meng === "") {
+							this.filled.splice(s, 1);
 						} else {
-							filled.splice(s, 1, entry);
+							this.filled.splice(s, 1, entry);
 						}
 						i = 1;
-					} 
+					}
 				}
 			}
 			if (i < 1) {
-					filled.push(entry);
-				}
+				this.filled.push(entry);
+			}
 		},
 		/*		onAfterRendering: function() {
 					this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -169,7 +219,7 @@ sap.ui.define([
 			this.getOwnerComponent().setModel(oModel, "data");
 
 		},
-		matDetail: function(oEvent) {
+		detailPage: function(oEvent) {
 			debugger;
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("matDetail");

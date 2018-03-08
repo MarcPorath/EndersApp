@@ -45,7 +45,7 @@
 			</fb:filterGroupItems>-->
 		</fb:FilterBar>
 		<m:Table id="productsTable" items="{/Basket}" growing="true" growingThreshold="50" growingTriggerText="lädt.." growingScrollToLoad="true"
-			growingDirection="Downwards">
+			growingDirection="Downwards" updateFinished="onChanged">
 			<m:headerToolbar>
 				<m:OverflowToolbar>
 <!--					<v:VariantManagement id="vm_table" select="onSelect" save="onSave" enabled="true" manage="onManage" showExecuteOnSelection="true"
@@ -57,7 +57,8 @@
 					<m:ToolbarSpacer/>
 					<!-- Add the Personalization button -->
 					<m:Button icon="sap-icon://hide" press="onHide" tooltip="Nur gefüllte Positionen anzeigen" />
-					<m:Button icon="sap-icon://add" press="add"/>
+					<m:Button icon="sap-icon://add-product" press="add"/>
+					<m:Button icon="sap-icon://cart-2" press="onClear" tooltip="Warenkorb leeren" />
 					<m:Button icon="sap-icon://action-settings" press="onPersoPress"/>
 					<!--<m:layoutData>-->
 					<!--	<m:OverflowToolbarLayoutData/>-->
@@ -83,7 +84,8 @@
 				<m:Column id="priceCol" minScreenWidth="Tablet" width="auto" demandPopin="true" hAlign="End"><m:Text text="Preis"/></m:Column>
 				<m:Column id="prherkCol" minScreenWidth="Tablet" width="auto" demandPopin="true" hAlign="Center"><m:Text text="Preisherkunft"/></m:Column>
 				<m:Column id="zdarCol" width="auto" hAlign="End"><m:Text text="Dauerrabatt"/></m:Column>
-				<m:Column id="mengCol" width="auto" hAlign="End"><m:Text text="Menge"/></m:Column>
+				<m:Column id="mengCol" width="2cm" hAlign="End"><m:Text text="Menge"/></m:Column>
+				<m:Column id="detailCol" width="auto" hAlign="End"><m:Text text="Detail"/></m:Column>
 			</m:columns>
 			<m:items>
 				<m:ColumnListItem>
@@ -97,6 +99,7 @@
 						<m:Text id="prherk" text="{PRHERK}"/>
 						<m:Text id="zdar" text="{ZDAR}"/>
 						<m:Input id="meng" liveChange="onMengChange" />
+						<m:Button id="detail" icon="sap-icon://detail-view" press="detailPage" />
 						<!--						<m:Text text="{SupplierName}"/>
 						<m:Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
 						<m:ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"
