@@ -8,9 +8,8 @@
 					<PropertyRef Name="KUNNR"/>
 					<PropertyRef Name="MATNR"/>
 				</Key>
-				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Kundennummer"
-					sap:sortable="false" sap:updatable="false">
-				</Property>
+				<Property MaxLength="10" Name="KUNNR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Kundennummer" sap:sortable="false" sap:updatable="false"></Property>
 				<Property MaxLength="18" Name="MATNR" Type="Edm.String" sap:filterable="true" sap:label="Materialnummer"/>
 				<Property MaxLength="40" Name="MAKTX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
 					sap:label="Artikeltext" sap:sortable="false" sap:updatable="false"/>
@@ -46,8 +45,8 @@
 					sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="PRICE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Preis"
 					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="PRHERK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Preisherkunft"
-					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="PRHERK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Preisherkunft" sap:sortable="false" sap:updatable="false"/>
 				<Property MaxLength="10" Name="ZVEK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="pdiff"
 					sap:sortable="false" sap:updatable="false"/>
 			</EntityType>
@@ -86,23 +85,65 @@
 				</Key>
 				<Property MaxLength="10" Name="vbeln" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
 					sap:label="Vertriebsbelegr" sap:sortable="true" sap:updatable="false"/>
-				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
-					sap:label="Kundenummer" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="kunnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Kundenummer"
+					sap:sortable="true" sap:updatable="false"/>
 				<Property MaxLength="10" Name="angel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Angelegt am"
 					sap:sortable="true" sap:updatable="false"/>
-				<Property MaxLength="10" Name="bestn" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Bestellnummer"
+				<Property MaxLength="10" Name="bestn" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Bestellnummer" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="bestd" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Bestelldatum" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="volum" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Auftragsvolumen" sap:sortable="true" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="OrderItems">
+				<Key>
+					<PropertyRef Name="vbeln"/>
+					<PropertyRef Name="MATNR"/>
+				</Key>
+				<Property MaxLength="10" Name="vbeln" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Vertriebsbelegr" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="MATNR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Artikelnummer" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="MAKTX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Artikeltext"
 					sap:sortable="true" sap:updatable="false"/>
-				<Property MaxLength="10" Name="bestd" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Bestelldatum"
+				<Property MaxLength="40" Name="GRTXT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Grunddatentext" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="4" Name="MATKL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Warengruppe"
 					sap:sortable="true" sap:updatable="false"/>
-				<Property MaxLength="10" Name="volum" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Auftragsvolumen"
-					sap:sortable="true" sap:updatable="false"/>					
+				<Property MaxLength="3" Name="DSD" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="DSD"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="4" Name="MEINS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="MEINS"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="AUMNG" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Angeforderte Menge" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="VRKME" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Verkaufsmengeneinheit" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="40" Name="BMENG" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true"
+					sap:label="Bestätigte Menge" sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="4" Name="MGr1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="MGr1"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="3" Name="KONDM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Preisgruppe"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="MTPOS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="MTPOS"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZDAR" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Dauerrabat"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="10" Name="PRICE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="Preis"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="40" Name="PRHERK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="P.Herkunft"
+					sap:sortable="true" sap:updatable="false"/>
+				<Property MaxLength="4" Name="ZVEK" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="true" sap:label="EK"
+					sap:sortable="true" sap:updatable="false"/>
 			</EntityType>
 			<EntityContainer m:IsDefaultEntityContainer="true" sap:supported-formats="atom json">
 				<EntitySet Name="Basket" EntityType="Enders.Basket"/>
 				<EntitySet Name="Customer" EntityType="Enders.Customer"/>
 				<EntitySet Name="Order" EntityType="Enders.Order"/>
+				<EntitySet Name="OrderItems" EntityType="Enders.OrderItems"/>
 			</EntityContainer>
--			<Annotations Target="Enders.Basket" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			-
+			<Annotations Target="Enders.Basket" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
 					<Collection>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
@@ -116,10 +157,10 @@
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="PRHERK"/>
-						</Record>			
+						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="ZDAR"/>
-						</Record>						
+						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
@@ -147,7 +188,7 @@
 					</Collection>
 				</Annotation>
 			</Annotations>
--			<Annotations Target="Enders.Order" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="Enders.Order" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
 					<Collection>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
@@ -164,10 +205,65 @@
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="volum"/>
-						</Record>						
+						</Record>
 					</Collection>
 				</Annotation>
-			</Annotations>			
+			</Annotations>
+			<Annotations Target="Enders.OrderItems" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MATNR"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MAKTX"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="GRTXT"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MATKL"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="DSD"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MEINS"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="AUMNG"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="VRKME"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="BMENG"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MGr1"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="KONDM"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="MTPOS"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="ZDAR"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="PRICE"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="PRHERK"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="ZVEK"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

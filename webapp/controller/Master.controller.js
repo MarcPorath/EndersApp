@@ -5,6 +5,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 		var filters = [];
 		var selectedCust = "";
 		var selectedCheck = "";
+		var selectedVbeln = "1111";
 
 		return Controller.extend("EndersApp.controller.Master", {
 

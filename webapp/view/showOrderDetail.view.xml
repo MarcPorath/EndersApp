@@ -1,137 +1,42 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:unified="sap.ui.unified" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.showOrderDetail">
-	<m:App id="showOrderDetail">
-		<m:pages>
-			<m:Page title="Title">
-				<m:content>
-			<m:Button text="Liefertermin" type="Emphasized" iconFirst="true" width="50%" enabled="true" visible="true" iconDensityAware="false" press="delDateChange"/>
-           
-            <m:Button text="Standardauftrag" type="Emphasized" iconFirst="true" width="50%" enabled="true" visible="true" iconDensityAware="false" press="selOrderType"/>
-            <m:Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
-                <m:infoToolbar>
-                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
-                        <m:content>
-                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:content>
-                    </m:Toolbar>
-                </m:infoToolbar>
-                <m:columns>
-                    <m:Column width="60px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>matkl}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="80px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>matnr}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="220px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>maktx}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="30px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>lizkz}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="55px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>mtpos}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="75px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>erfmn}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="25px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>meins}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="75px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>price}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="30px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>peinh}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>kond}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>discount}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>Availability}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>matinf}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-                        <m:header>
-                            <m:Text text="{i18n>netwr}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                        </m:header>
-                        <m:footer/>
-                    </m:Column>
-                </m:columns>
-                <m:items>
-                    <m:ColumnListItem type="Active">
-                        <m:cells>
-                            <m:Text text="1090" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Text text="10106559" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Text text="Stiefel Purofort Multigrip Gr.45 Weiß" width="auto" maxLines="2" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Text text="NLI" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Text text="NORM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Input type="Text" showValueHelp="false" enabled="true" visible="true" width="77px" valueHelpOnly="false" maxLength="0" editable="false"/>
-                            <m:Text text="PAK" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Input type="Number" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0" editable="false"/>
-                            <m:Text text="1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Text text="ZAKT" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                            <m:Input type="Number" placeholder="%" showValueHelp="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0" editable="false"/>
-                            <m:Input type="Number" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0" editable="false"/>
-                            <core:Icon src="sap-icon://notes" size="30px" height="48px" width="48px" visible="true" press="matDetail"/>
-                            <unified:Currency value="3200.23" currency="EUR" useSymbol="false" maxPrecision="3"/>
-                        </m:cells>
-                    </m:ColumnListItem>
-                </m:items>
-            </m:Table>
-            <m:HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="End" renderType="Div" visible="true" displayInline="false">
-                <m:items>
-                    <m:Text text="{i18n>totValue}" width="150px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                    <m:Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
-                    <unified:Currency value="3200.23" currency="EUR" useSymbol="false" maxPrecision="3"/>
-                </m:items>
-                <m:layoutData/>
-            </m:HBox>
-					
-				</m:content>
-			</m:Page>
-		</m:pages>
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:unified="sap.ui.unified"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="EndersApp.controller.showOrderDetail">
+	<m:App id="showOrderDetail" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable">
+		<m:Page title="Warenkorb" showNavButton="true" navButtonPress="goBackAndReject">
+			<m:VBox fitContainer="true">
+				<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="OrderItems" persistencyKey="SmartFilterPKey">
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="MATNR" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+				</smartFilterBar:SmartFilterBar>
+				<smartTable:SmartTable id="showOrderTab" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false" entitySet="OrderItems"
+					useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="OrderItems" showRowCount="true"
+					useExportToExcel="false" enableAutoBinding="true" beforeRebindTable="onTableRebind">
+					<smartTable:customToolbar></smartTable:customToolbar>
+					<m:Table growing="auto" id="tableOrder">
+						<m:columns>
+							<m:Column id="zson" width="100px" hAlign="Begin">
+								<m:customData>
+									<core:CustomData key="p13nData" value='\{"columnKey": "ZSON", "maxLength": "5","columnIndex":"7"}'/>
+								</m:customData>
+								<m:Text text="Sonderrabatt"/>
+							</m:Column>
+						</m:columns>
+						<m:items>
+							<m:ColumnListItem highlight="{path:'MATNR' , formatter:'.formatRowHighlight'}">
+								<m:cells> 
+									<m:Text text="0%" id="zson1"/>
+								</m:cells>
+							</m:ColumnListItem>
+						</m:items>
+					</m:Table>
+				</smartTable:SmartTable>
+			</m:VBox>
+			<m:footer>
+				<m:OverflowToolbar id="otbFooter">
+					<m:ToolbarSpacer/>
+					<m:Button type="Reject" text="Zurück" press="goBackAndReject"/>
+				</m:OverflowToolbar>
+			</m:footer>
+		</m:Page>
 	</m:App>
 </mvc:View>

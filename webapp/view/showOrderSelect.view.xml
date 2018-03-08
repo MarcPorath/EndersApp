@@ -1,5 +1,5 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:unified="sap.ui.unified" xmlns:m="sap.m" xmlns:tab="sap.ui.table"
 	controllerName="EndersApp.controller.showOrderSelect" height="100%">
 	<m:Page title="Aufträge" showNavButton="true" navButtonPress="goBackAndReject">
 		<m:VBox fitContainer="true">
@@ -12,21 +12,21 @@
 				</smartFilterBar:controlConfiguration>
 			</smartFilterBar:SmartFilterBar>
 			<smartTable:SmartTable id="orderTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false" entitySet="Order"
-				useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Aufträge" showRowCount="true"
-				useExportToExcel="false" enableAutoBinding="true" beforeRebindTable="onTableRebind">
+				useVariantManagement="true" showVariantManagement="true" useTablePersonalisation="true" header="Order" showRowCount="true"
+				useExportToExcel="false" enableAutoBinding="true" beforeRebindTable="onTableRebind" >
 				<smartTable:customToolbar>
-					<OverflowToolbar design="Transparent">
-						<ToolbarSpacer/>
-					</OverflowToolbar>
+					<m:OverflowToolbar design="Transparent">
+						<m:ToolbarSpacer/>
+					</m:OverflowToolbar>
 				</smartTable:customToolbar>
-				<Table mode="SingleSelectMaster" growing="true" id="table" itemPress="showDetail"/>
+				<m:Table mode="SingleSelectMaster"  growing="true" id="table" selectionChange="showDetail" />
 			</smartTable:SmartTable>
 			</m:VBox>
-			<footer>
-				<OverflowToolbar id="otbFooter">
-					<ToolbarSpacer/>
-					<Button type="Reject" text="Zurück" press="goBackAndReject" />
-				</OverflowToolbar>
-			</footer>
+			<m:footer>
+				<m:OverflowToolbar id="otbFooter">
+					<m:ToolbarSpacer/>
+					<m:Button type="Reject" text="Zurück" press="goBackAndReject" />
+				</m:OverflowToolbar>
+			</m:footer>
 	</m:Page>
 </mvc:View>
